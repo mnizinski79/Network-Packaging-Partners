@@ -1,0 +1,107 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+@media @small {
+    footer {
+        .sub-footer {
+            padding: @mobile-padding*2 @mobile-padding;
+            background-size: cover;
+            background-position: center center;
+            text-align: center;
+            position: relative;
+            
+            a {
+                background-color: @secondary-color;
+                padding: 20px 20px;
+                .rounded(10px);
+                color: #fff;
+                display: block;
+                font-size: 1.75em;
+                .primary-font-regular;
+                .transition(0.3s);
+                
+                strong {
+                    display: block;
+                    font-weight: 400;
+                    margin: 0 0 10px 0;
+                }
+                
+                span {
+                    font-size: .6em; 
+                    
+                    &:after {
+                        .icon-font;
+                        content: "\e600";
+                        font-size: .5em;
+                        display: inline-block;
+                        margin: 0 0 0 10px;
+                        vertical-align: middle;
+                        line-height: 0;  
+                    }
+                }
+                
+                &:hover {
+                    background-color: darken(@secondary-color,5%);        
+                }
+            }
+        }
+        
+        .prim-footer {
+            background: @secondary-grey;
+            border-top: 7px solid fade(#5f5e55,80%);
+            padding: @mobile-padding*2 @mobile-padding;
+            color: #fff;
+            text-align: center;
+            font-size: 1.25em;
+            overflow: hidden;
+            
+            p.copyright {
+                margin: 0;
+                padding: 0;
+            }
+            
+            ul.footer-links {
+                margin: 40px 0 0 0;
+                padding: 0;
+                list-style: none;
+                width: 104%;
+                
+                li {
+                    margin: 0 0 0px 0;
+                    list-style: none; 
+                    width: 33.33333%;
+                    float: left;
+                    padding: 0 2%;
+                    text-align: center;
+                    font-size: .75em;
+                    border-right: 1px solid fade(#fff,20%);
+                    
+                    a {
+                        color: fade(#fff,80%); 
+                        .transition(0.3s);
+                        
+                        &:hover {
+                            color: #fff;        
+                        }
+                    }
+                    
+                    &:last-child {
+                        border: 0;    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @medium {
+    
+}
+
+@media @large {
+    
+}
+
+@media @extra-large {
+    
+}

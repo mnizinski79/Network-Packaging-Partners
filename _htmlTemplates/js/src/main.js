@@ -42,9 +42,17 @@ function initParalax(){
     $(window).resize( handleResize ).trigger("resize");   
 }
 
+function initMobileTrigger() {
+    $(".nav-trigger").click(function(e) {
+        e.preventDefault();
+        $("body").toggleClass("mobile-nav-open");
+    });
+}
+
 // jquery is ready
 $(document).ready(function(){
     
     initParalax();
+    initMobileTrigger();
     
 });
