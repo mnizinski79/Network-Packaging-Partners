@@ -10,6 +10,8 @@
             text-align: center;
             position: relative;
             
+            .box-shadow(inset 0px 8px 8px -5px rgba(50, 50, 50, 0.25));
+            
             a {
                 background-color: @secondary-color;
                 padding: 20px 20px;
@@ -64,13 +66,11 @@
                 margin: 40px 0 0 0;
                 padding: 0;
                 list-style: none;
-                width: 104%;
                 
                 li {
                     margin: 0 0 0px 0;
-                    list-style: none; 
-                    width: 33.33333%;
-                    float: left;
+                    list-style: none;
+                    display: inline-block;
                     padding: 0 2%;
                     text-align: center;
                     font-size: .75em;
@@ -95,7 +95,52 @@
 }
 
 @media @medium {
-    
+    footer {
+        
+        .sub-footer {
+            
+            a {
+                padding: 40px 40px;
+                display: inline-block;
+                font-size: 2.75em;
+                margin: 0 auto;
+                
+                strong {
+                    padding-bottom: 10px;    
+                }
+                
+                span {
+                    font-size: .5em;
+                }
+            }
+        }
+        
+        .prim-footer {
+            text-align: center;
+            
+            p.copyright {
+                float: left;
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                font-size: .75em;
+                color: fade(#fff,65%);
+            }
+            
+            ul.footer-links {
+                float: right;
+                text-align: right;
+                margin: 0;
+                width: 50%;
+                
+                li {
+                    a {
+                        color: fade(#fff,65%);   
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media @large {

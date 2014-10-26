@@ -95,6 +95,12 @@ header {
     }
 
     @media @medium {
+        
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        
         h1 {
             &#logo {
                 width: 160px;
@@ -104,7 +110,173 @@ header {
     }
 
     @media @large {
-
+        
+        padding: 0;
+        margin-top: 30px;
+        height: 80px;
+        
+        h1 {
+            &#logo {
+                width: 170px;
+                position: absolute;
+                left: @base-margin;
+                top: 0px;
+            }
+        }
+        
+        .nav-trigger {
+            display: none;
+        }
+        
+        nav#nav-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: none;
+            
+            ul {
+                margin: 0;
+                padding: 0px;
+                list-style: none;
+                border-bottom: 0px solid fade(#fff,10%);
+                
+                &#primary-nav {
+                    border-bottom: 0; 
+                    padding: 0;
+                    margin: 0;                    
+                    margin-left: 27%;
+                    float: left;
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        
+                        a {
+                            margin: 0;
+                            padding: 35px 20px 25px;
+                            color: @secondary-color;
+                            
+                            &:hover {
+                                background: @secondary-color;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+                &#secondary-nav {
+                    padding: 0;
+                    margin: 0 @base-margin 0 0;
+                    float: right;
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        padding-top: 22px;
+                        margin: 0 0 0 5px;
+                        
+                        a {
+                            margin: 0;
+                            padding: 8px 15px;
+                            color: #fff;
+                            background: @primary-color;
+                            .rounded(10px);
+                            font-size: .65em;
+                            
+                            &:hover {
+                                background: darken(@primary-color,10%);      
+                            }
+                        }
+                        
+                        &.btn-search { 
+                            a {
+                                .icon-font;
+                                background: none;
+                                border: 2px solid @primary-color;
+                                .rounded(50%);
+                                width: 35px;
+                                height: 35px;
+                                padding: 9px 0;
+                                text-align: center;
+                                
+                                span {
+                                    display: none;    
+                                }
+                                
+                                &:after {
+                                    content: "\e602";
+                                    color: @primary-color;
+                                    font-size: 1.15em;
+                                    line-height: 0;
+                                    padding-left: 2px;
+                                }
+                                
+                                &:hover {
+                                    background: darken(@primary-color,10%);
+                                    border: 2px solid darken(@primary-color,10%);
+                                    
+                                    &:after {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &#ancilary-nav {
+                    border-bottom: 0;
+                    padding: 0 @base-margin;
+                    margin: 0;
+                    font-size: .95em;
+                    position: absolute;
+                    top: -30px;
+                    left: 0;
+                    text-align: right;
+                    right: 0;
+                    height: 30px;
+                    background: rgba(0,0,0,0.45);
+                    
+                    li {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                        font-size: .85em;
+                        
+                        a {
+                            color: fade(#fff,80%); 
+                            padding: 4px 0px 0;
+                            display: inline-block;
+                            
+                            &:hover {
+                                background: none;
+                                color: #fff;
+                            }
+                        }
+                        
+                        &:after {
+                            content: "•"; 
+                            color: fade(#fff,80%);
+                            display: inline-block;
+                            padding: 0 8px;
+                        }
+                        
+                        &:last-of-type {
+                            &:after {
+                                content: " "; 
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 
     @media @extra-large {

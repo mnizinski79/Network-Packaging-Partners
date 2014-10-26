@@ -209,6 +209,17 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/_htmlTemplates\/img\/fade-divider.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1264,
+		"inputAbbreviatedPath": "\/_htmlTemplates\/img\/fade-divider.png",
+		"outputAbbreviatedPath": "\/_htmlTemplates\/img\/fade-divider.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/_htmlTemplates\/img\/img-bg-1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
