@@ -280,6 +280,46 @@ header {
     }
 
     @media @extra-large {
-
+        h1 {
+            &#logo {
+                left: @base-margin*1.5;
+            }
+        }
+        
+        nav#nav-container {
+            ul {
+                
+                &#primary-nav {
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        
+                        a {
+                            margin: 0;
+                            padding: 35px 20px 25px;
+                            color: @secondary-color;
+                            
+                            &:hover {
+                                background: @secondary-color;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+                &#secondary-nav {
+                    margin: 0 @base-margin*1.25 0 0;
+                }
+                
+                &#ancilary-nav {
+                    padding: 0 @base-margin*1.25;
+                    right: 0;
+                    height: 30px;
+                }
+            }
+        }
+        
     }
 }
