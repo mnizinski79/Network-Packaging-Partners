@@ -242,11 +242,11 @@
         
         h3 {
             margin: 0 0 @mobile-padding 0;
-            padding: 0 0 30px;
+            padding: 30px 0 20px;
             font-size: 1.25em;
             .primary-font-regular;
             color: @primary-grey;
-            border-bottom: 1px solid fade(@primary-grey,30%);
+            border-top: 1px solid fade(@primary-grey,30%);
             text-transform: uppercase;
             
             a {
@@ -579,6 +579,12 @@
     }
     
     #content-feeds {
+        
+        h3 {
+            padding: 0 0 30px;
+            border-top: 0;
+            border-bottom: 1px solid fade(@primary-grey,30%);
+        }
         
         .col-container {
             width: 105%;

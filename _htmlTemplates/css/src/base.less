@@ -18,12 +18,48 @@
                 background: url(../img/svgs/mobile-toggle-close.svg) 100% 20px no-repeat;
             }
         }
+        
+        //nav high lights
+        &.section-why-us {
+            
+            header nav#nav-container {
+            
+                ul {
+                    &#primary-nav {
+
+                        li#lnk-why-us {
+                            position: relative;
+                            a {
+                                background: @secondary-color;
+                                color: #fff;
+                            }
+                            
+                            &:after {
+                                content: "";
+                                border-style: solid;
+                                border-width: 10px 48px 0 48px;
+                                border-color: #fc5001 transparent transparent transparent;
+                                position: absolute;
+                                bottom: -10px;
+                                left: 0;
+                                right: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     a {
         color: @primary-color;
         text-decoration: none;
     } 
+    
+    p {
+        color: fade(@primary-grey,80%); 
+        line-height: 1.5em;
+    }
     
     .btn {
         .rounded(10px);
