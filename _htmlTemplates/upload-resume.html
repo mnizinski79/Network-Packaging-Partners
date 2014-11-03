@@ -58,75 +58,84 @@
             
             <div id="page-header" style="background-image:url(img/template-img-header.jpg);">
                 <div class="abs-content">
-                    <p class="breadcrumbs">Oct. 15, 2014</p>
-                    <h1>New Package Material</h1>
-                </div>
-
-                <div class="share-box">
-                    <h3>Share:</h3>
-                    <ul>
-                        <li class="social-linkedin"><a href="#"><span>Linked In</span></a></li>
-                        <li class="social-twitter"><a href="#"><span>Twitter</span></a></li>
-                        <li class="social-googleplus"><a href="#"><span>Google Plus</span></a></li>
-                    </ul>
+                    <p class="breadcrumbs">Why Us</p>
+                    <h1>We're a different kind of company</h1>
                 </div>
             </div>
             
             <article>
                 
-                <div class="default-container">
-                    <div class="detail-img">
-                        <img src="img/detail-img.jpg" />
+                <div class="intro-container col-container">
+                    <div class="main-content col-8">
+                        <h2>Upload your resume</h2>
+
+                        <p>
+                            Even if we don’t have a job that’s perfect for you today, we'd love to 
+                            keep your resume on file so we’ll have it when we do.
+                        </p>
+                        
+                        <figure class="uploader">
+                            upload indicator
+                            <figcaption>caption...</figcaption>
+                        </figure>
+                        
+                        <form>
+                            <input type="file" name="file-resume-upload" id="file-resume-upload">
+                            
+                            <div class="divider">or</div>
+                            
+                            <a href="#" class="btn api-call">Import from <span id="logo-linkedIn">Linked In</span></a>
+                            
+                            <fieldset class="btn-row">
+                                <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Search</span></button>
+                            </fieldset>
+                        </form>
                     </div>
                     
-                    <h2 class="hdr-detail">Subheader</h2>
-                
-                    <ul class="tag-list">
-                        <li><a href="#">Package</a></li>
-                        <li><a href="#">Network</a></li>
-                        <li><a href="#">Work Place</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus fringilla leo non 
-                        mattis. Nulla eu sapien viverra, auctor justo vitae, rhoncus ex. Vestibulum magna enim, 
-                        tincidunt sed placerat quis, scelerisque nec odio. Quisque iaculis finibus mauris, mattis 
-                        blandit massa placerat vitae. Etiam et tempus nisl. Quisque id lacus et libero accumsan 
-                        porta at molestie magna. Fusce dapibus lectus a enim sagittis, a sagittis nisl tristique. 
-                        Sed volutpat id lectus in rhoncus.
-                    </p>
-
-                    <p>
-                        Maecenas lorem ante, pulvinar eu lacinia in, dapibus accumsan orci. Pellentesque elit enim, 
-                        dignissim in leo sit amet, eleifend elementum eros. Duis dictum, lacus in porta auctor, 
-                        tellus tellus porttitor nisi, ac tristique dolor elit id erat. Cras suscipit, neque sed 
-                        sodales euismod, sapien nulla dapibus leo, eu dapibus ligula libero id augue. Integer 
-                        mattis, risus in facilisis venenatis, nisl elit aliquet nibh, eget laoreet leo elit sed 
-                        erat. Nullam a auctor arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. 
-                        Vestibulum varius sodales dui vel ullamcorper.
-                    </p>
-
-                    <p>
-                        Nulla facilisi. Fusce in velit efficitur lectus posuere scelerisquea vitae ut risus. 
-                        Proin efficitur erat eu consequat venenatis. Mauris ut venenatis ex. Donec quis urna sapien. 
-                        Nunc eu rutrum quam. Fusce ut mauris congue, porta ante sodales, sodales nisl. Maecenas et 
-                        facilisis nisi. Pellentesque rhoncus posuere sodales. Aliquam fermentum enim et laoreet 
-                        hendrerit. Maecenas euismod lorem at aliquam tristique. Curabitur commodo cursus fringilla. 
-                        Ut dui augue, mollis at mauris ac, auctor bibendum ex. Sed ultrices lacinia nulla vitae 
-                        malesuada. Aenean euismod, nisl quis dictum dapibus, diam eros tincidunt mi, id gravida 
-                        urna sapien nec augue. Duis et pretium sapien.
-                    </p>
-
-                    <p>
-                        Cras non mattis lacus. Aliquam ullamcorper bibendum nulla, ut gravida dui ornare eu. 
-                        Suspendisse risus tortor, vehicula eu augue nec, sollicitudin aliquam lacus. Curabitur 
-                        imperdiet laoreet nulla sit amet hendrerit. Aenean porttitor sit amet libero tincidunt 
-                        ornare. Cras gravida orci congue egestas interdum. Morbi id neque ac urna tempor consequat. 
-                        Quisque ultrices ornare tincidunt. Mauris ac lacus porttitor, porta urna ac, tempus nunc. 
-                        Quisque elit leo, elementum vel fringilla sit amet, rutrum ut lacus. Pellentesque eu fermentum mi. 
-                        Mauris quis leo mollis, luctus augue a, imperdiet erat. Proin efficitur finibus mauris eget sagittis.
-                    </p>
+                    <aside class="sidebar col-3">
+                        <h3>Let’s keep in touch</h3>
+                        
+                        <p>
+                            We have a constantly changing set of open positions. Tell us what 
+                            you're looking for, and we'll send you email updates from time to time.
+                        </p>
+                        
+                        <form>
+                            <fieldset>
+                                <label for="input-search-positions">Jobs interested in</label>
+                                <select>
+                                    <option selected value="null">Jobs interested in...</option>
+                                    <option selected value="Job 1">Job 1</option>
+                                    <option selected value="Job 2">Job 2</option>
+                                    <option selected value="Job 3">Job 3</option>
+                                </select>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label>Email Address:</label>
+                                <input type="email" name="input-email" id="input-email">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label for="input-search-positions">Location</label>
+                                <select>
+                                    <option selected value="null">Location...</option>
+                                    <option selected value="New York">New York</option>
+                                    <option selected value="Atlanta">Atlanta</option>
+                                    <option selected value="Seattle">Seattle</option>
+                                </select>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <input type="checkbox" value="agree">
+                                <label>Send me jobs I’m interested in</label>
+                            </fieldset>
+                            
+                            <fieldset class="btn-row">
+                                <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Search</span></button>
+                            </fieldset>
+                        </form>
+                    </aside>
                 </div>
                 
             </article>

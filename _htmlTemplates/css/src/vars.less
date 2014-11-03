@@ -3,6 +3,8 @@
 @secondary-color: #fc5001;
 @primary-grey: #565656;
 @secondary-grey: #929083;
+@light-grey: #ececec;
+@striped-background-color: #f3f3f3;
 
 //typography
 .primary-font-light { 
@@ -47,6 +49,24 @@
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.arrow-accent {
+    .icon-font;
+    content: "\e600";
+    color: #fff;
+    background: @secondary-color;
+    .rounded(50%);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 4px 4px;
+    text-align: center;
+    font-size: .5em;
+    line-height: 1em;
+    margin: 0 8px 0 0px;
+    .transform(translateY(-1px));
+    .transition(0.3s);    
 }
 
 // Grids

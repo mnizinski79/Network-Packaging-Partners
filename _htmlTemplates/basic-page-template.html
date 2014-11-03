@@ -22,7 +22,7 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>        
         
     </head>
-    <body>
+    <body class="section-why-us">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -36,15 +36,15 @@
                 <a href="#" class="mobile nav-trigger">mobile trigger</a>
                 <nav id="nav-container">
                     <ul id="primary-nav">
-                        <li><a href="#">Why Us</a></li>
-                        <li><a href="#">Capabilities</a></li>
-                        <li><a href="#">Expertise</a></li>
-                        <li><a href="#">News</a></li>
+                        <li id="lnk-why-us"><a href="#">Why Us</a></li>
+                        <li id="lnk-capabilities"><a href="#">Capabilities</a></li>
+                        <li id="lnk-expertise"><a href="#">Expertise</a></li>
+                        <!--li id="lnk-news"><a href="#">News</a></li-->
                     </ul>
                     
                     <ul id="secondary-nav">
                         <li><a href="#">Candidates</a></li>
-                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Companies</a></li>
                         <li class="btn-search"><a href="#"><span>Search</span></a></li>
                     </ul>
                     
@@ -56,146 +56,305 @@
                 </nav>
             </header>
             
+            <div id="page-header" style="background-image:url(img/template-img-header.jpg);">
+                <div class="abs-content">
+                    <p class="breadcrumbs">Why Us</p>
+                    <h1>We're a different kind of company</h1>
+                </div>
+            </div>
+            
             <article>
-                <div id="home-intro" style="background-image:url(img/img-hero-1.jpg);">
-                    <div class="abs-content">
-                        <h1>More than just the fancy wrapping</h1>
+                
+                <div class="intro-container col-container">
+                    <div class="main-content col-8">
+                        <h2>We concentrate on the right things.</h2>
+
                         <p>
-                            We bring a fresh perspective to packaging, with unparalleled expertise and a network of experienced resources. 
+                            Knowledge and expertise are core to everything we do — but 
+                            what sets us apart is how we treat people. We want to grow 
+                            every person that works for us, and give every client the 
+                            attention they deserve.
+                        </p> 
+
+                        <p>
+                            We want to grow each person who works for us and give each 
+                            client the attention they deserve — all while exceeding 
+                            expectations every time.
+                        </p> 
+                    </div>
+                    
+                    <aside class="sidebar col-3">
+                        <h3>Why we’re better</h3>
+                        
+                        <ul class="arrow-accent-list">
+                            <li><span>We've worked with some of the biggest brands in packaging</span></li>
+                            <li><span>We have more than 30 years of packing experience</span></li>
+                            <li><span>We take great care in cultivating talent</span></li>
+                        </ul>
+                    </aside>
+                </div>
+                
+                <div class="branding-box" style="background-image:url(img/img-bg-2.jpg);">
+                    <div class="abs-content">
+                        <h2>Our people</h2>
+                        <p>
+                            Our network of talent is second to none. We pride ourselves not only 
+                            on our collective depth of expertise, but also on hiring intuitive 
+                            people who think creatively and work efficiently.
                         </p>
-                        <a href="#" class="btn dark accent">What is Packaging</a>
+                        <a href="#" class="btn primary">Join our team</a>
                     </div>
                 </div>
                 
-                <div id="find-positions">
-                    <div class="col-container">
-                        <form id="form-search-positions">
-                            <h2>Find Positions</h2>
+                <div class="secondary-content col-container">
+                    <div class="col-6">
+                        <h2>Principles &amp; Process</h2>
+                        
+                        <p>
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        
+                        <p>
+                            Quisque pellentesque lectus eu nisi congue tempus. Integer ut porta leo. Aliquam a ex luctus nibh 
+                            finibus porttitor. Nulla turpis nibh, commodo ut rhoncus vel, tempor vitae odio. Nunc non dictum 
+                            nisl. Vivamus imperdiet sem vel congue ultricies. Donec accumsan libero vehicula, rutrum enim 
+                            suscipit, viverra magna. Sed non consectetur dui. Etiam ac bibendum libero. Vivamus in libero et 
+                            dui condimentum maximus id nec eros. Aliquam in elementum arcu. Nunc vel gravida nibh, non 
+                            hendrerit tellus. Quisque vel est nec nulla viverra molestie. Duis eleifend odio nibh, id 
+                            facilisis tellus cursus ut.
+                        </p>
+                        
+                        <ul class="arrow-accent-list">
+                            <li>Nunc ut eros mollis, molestie sem ac, interdum odio.</li>
+                            <li>Nullam vel urna dapibus, eleifend neque quis, luctus sem.</li>
+                            <li>Mauris vel nulla vel augue dignissim elementum eget quis est.</li>
+                            <li>Curabitur eget enim quis nulla mollis mollis.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-6">
+                        <figure>
+                            <img src="img/img-process-graphic.png">
+                            <figcaption>Network Packaging Process Chart</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <div class="secondary-content col-container">
+                    <div class="col-3 sidebar">
+                        <h3>Find a Position</h3>
+                        <form id="search-jobs">
                             <fieldset>
-                                <label for="input-search-positions">Search Positions</label>
-                                <input id="input-search-positions" name="input-search-positions" type="text">
-                                <button type="submit" value="Search" id="btn-search" class="btn search" name="btn-search"><span>Search</span></button>
-                                <em class="tip-text"><strong>TIP:</strong> Use keywords such as “Package Design”</em>
+                                <label for="input-search-positions">Jobs interested in</label>
+                                <select name="select-jobs-interested" id="select-jobs-interested">
+                                    <option selected value="null">Jobs interested in...</option>
+                                    <option value="Job 1">Job 1</option>
+                                    <option value="Job 2">Job 2</option>
+                                    <option value="Job 3">Job 3</option>
+                                </select>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label for="input-search-positions">Location</label>
+                                <select name="select-jobs-location" id="select-jobs-location">
+                                    <option selected value="null">Location...</option>
+                                    <option value="New York">New York</option>
+                                    <option value="Atlanta">Atlanta</option>
+                                    <option value="Seattle">Seattle</option>
+                                </select>
+                            </fieldset>
+                            
+                            <fieldset class="btn-row">
+                                <button type="submit" value="Search" id="btn-search" class="btn primary search" name="btn-search"><span>Search</span></button>
                             </fieldset>
                         </form>
+                    </div>
+                    
+                    <div class="col-8">
+                        <h3>Recent Position <a href="#" class="btn primary">View all</a></h3>
+                        
+                        <div class="container-feed-positions">
+                            <ul class="col-container">
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
 
-                        <div class="link-box col-container">
-                            <div class="col-2">
-                                <h3>For Candidates</h3>
-                                <ul>
-                                    <li><a href="#">View the job board</a></li>
-                                    <li><a href="#">Submit your resume</a></li>
-                                    <li><a href="#">Get help &amp; info</a></li>
-                                </ul>
-                            </div>
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
 
-                            <div class="col-2">
-                                <h3>For Partners</h3>
-                                <ul>
-                                    <li><a href="#">Submit a position</a></li>
-                                    <li><a href="#">Fill a position</a></li>
-                                    <li><a href="#">Become a partner</a></li>
-                                </ul>
-                            </div>
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
+
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
+
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
+
+                                <li class="col-6">
+                                    <a href="#">
+                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
+                                        <h3>Packaging Engineer</h3>
+                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div> 
-                </div>
-                
-                <div id="positioning-message" style="background-image:url(img/img-hero-2.jpg);">
-                    <div class="abs-content">
-                        <h2>Our business is built on trust.</h2>
-                        <p>
-                            We create lasting relationships with everyone we work with — client partners and candidates alike.
-                        </p>
-                        <a href="#" class="btn primary">See how we're different</a>
                     </div>
                 </div>
                 
-                <div id="content-feeds">
-                    <div class="col-container">
-                        <div class="container-feed-positions col-3">
-                            <h3>Positions <a href="#" class="btn primary">View all</a></h3>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="secondary-content col-container">
+                    <ul class="carousel">
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
                         
-                        <div class="container-feed-events col-3">
-                            <h3>Upcoming <a href="#" class="btn primary">View all</a></h3>
-                            
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="img/img-upcoming.jpg">
-                                        <h3>Join Us at Packaging Con</h3>
-                                        <p>Booth 32A — Jan. 23, 2015</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
                         
-                        <div class="container-feed-news col-3">
-                            <h3>News <a href="#" class="btn primary">View all</a></h3>
-                            
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="img-thumb"><img src="img/img-news-1.jpg"></div>
-                                        <div class="news-excerpt">
-                                            <h4 class="position-location">Oct. 15, 2014</h4>
-                                            <h3>New Packing Material</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <div class="img-thumb"><img src="img/img-news-2.jpg"></div>
-                                        <div class="news-excerpt">
-                                            <h4 class="position-location">Oct. 15, 2014</h4>
-                                            <h3>New Packing Material</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <div class="img-thumb"><img src="img/img-news-3.jpg"></div>
-                                        <div class="news-excerpt">
-                                            <h4 class="position-location">Oct. 15, 2014</h4>
-                                            <h3>New Packing Material</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>                    
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
+                        
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
+                        
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
+                        
+                        <li class="carousel-item">
+                            <a href="#">
+                                <img src="img/img-upcoming.jpg">
+                                <h3>Join Us at Health Pack</h3>
+                                <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                            </a>
+                        </li>
+                    </ul>  
                 </div>
+                
+                <div class="secondary-content col-container">
+                    <h2>Become a partner</h2>
+                    <p>
+                        Schedule an appointment below and we'll call you when it works with your schedule. 
+                    </p>
+                    
+                    <form>
+                        <div class="col-4">
+                            <h3>Tell us about you:</h3>
+                            <fieldset>
+                                <label>Your Name:</label>
+                                <input type="text" name="input-name" id="input-name" placeholder="Your name">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label>Email Address:</label>
+                                <input type="email" name="input-email" id="input-email" placeholder="Email address">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label>Additional Information:</label>
+                                <textarea name="textarea-additional-you" id="textarea-additional-you" placeholder="Additional information"></textarea>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>Tell us about your company:</h3>
+                            <fieldset>
+                                <label>Company Name:</label>
+                                <input type="text" name="input-name" id="input-name" placeholder="Company name">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label>Company URL:</label>
+                                <input type="email" name="input-email" id="input-email" placeholder="Company URL">
+                            </fieldset>
+                            
+                            <fieldset>
+                                <label>Additional Information:</label>
+                                <textarea name="textarea-additional-you" id="textarea-additional-you" placeholder="Additional information"></textarea>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-4">
+                            <h3>Tell us when you'd like to chat:</h3>
+                            <div id="date-picker">
+                                [calendar]
+                            </div>
+                        </div>
+                        
+                        <fieldset class="btn-row">
+                            <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Submit</span></button>
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div class="secondary-content col-container">
+                    <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                        <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                        <h3>Package Engineering &amp; Design</h3>
+                        <p>Lorium iosum dolar sit amet</p>
+                    </a>
+                    
+                    <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                        <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                        <h3>Package Engineering &amp; Design</h3>
+                        <p>Lorium iosum dolar sit amet</p>
+                    </a>
+                    
+                    <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                        <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                        <h3>Package Engineering &amp; Design</h3>
+                        <p>Lorium iosum dolar sit amet</p>
+                    </a>
+                </div>
+                
             </article>
             
             <footer>
