@@ -153,11 +153,31 @@ function initCarousel() {
     });
 }
 
+function openSearch() {
+    
+    //make so click anywhere closes search box
+    $(document).click(function() {
+        $("body").removeClass("search-opened").addClass("close");//close the main nav and make the search show
+    });
+    
+    $("#primary-search").click(function(e){
+         e.stopPropagation();//make sure it doesn't close on iteself
+    });
+    
+}
+
+
+function initSearchToggle() {
+    openSearch();
+}
+
+
 // jquery is ready
 $(document).ready(function(){
     
     initParalax();
     initMobileTrigger();
     initCarousel();
+    initSearchToggle();
     
 });

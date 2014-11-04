@@ -52,6 +52,17 @@
         margin: 0;
         padding: @mobile-padding*2 @mobile-padding;
         
+            //Fixing Clears Floats
+            &:before,
+            &:after {
+                content: " "; /* 1 */
+                display: table; /* 2 */
+            }
+
+            &:after {
+                clear: both;
+            }
+        
         &.col-container {
             width: 100%;
         }
@@ -92,6 +103,17 @@
         margin: 0;
         padding: @mobile-padding*2 @mobile-padding;
         position: relative;
+        
+            //Fixing Clears Floats
+            &:before,
+            &:after {
+                content: " "; /* 1 */
+                display: table; /* 2 */
+            }
+
+            &:after {
+                clear: both;
+            }
         
         h2 {
             line-height: 1.25em;    
@@ -238,18 +260,25 @@
             display: block;
             
             figure {
-                padding: 20px;    
+                padding: 50px;
+                padding-bottom: 0px;
             }
             
             h3 {
                 .primary-font-regular;
                 font-size: 1.375em;
+                line-height: 1.5em;
                 margin-bottom: 0;
                 padding-top: 40px;
                 padding-bottom: 0;
                 .transition(0.2s);
                 border-bottom: 0;
                 text-transform: none;
+                border: none;
+            }
+            
+            p {
+                margin-top: 0;    
             }
             
             &:hover {
@@ -257,6 +286,7 @@
                     color: @secondary-color;   
                 }
             }
+            
         }
         
         form {
@@ -377,11 +407,24 @@
             }
         }  
         
-        figure {   
-            padding-top: 30px;
+        .page-lead {
             
-            figcaption {
-                text-align: right;
+            &.col-4 {
+                width: 33.3333%;    
+            }   
+            
+            h3 {
+                font-size: 1.25em;       
+            }
+            
+            figure {   
+                padding: 20px;
+                padding-top: 30px;
+                padding-bottom: 0;
+
+                figcaption {
+                    text-align: right;
+                }
             }
         }
     }
