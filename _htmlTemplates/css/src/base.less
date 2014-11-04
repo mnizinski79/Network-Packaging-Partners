@@ -19,6 +19,10 @@
             }
         }
         
+        .btn-row {
+            clear: both;   
+        }
+        
         //nav high lights
         &.section-why-us {
             
@@ -99,6 +103,20 @@
                 line-height: 0;
             }
         }
+        
+        &.accent-search {
+            color: #fff;
+            
+            &:before {
+                .icon-font;
+                content: "\e602";
+                font-size: 1.25em;
+                display: inline-block;
+                margin: 0 10px 0 0;
+                vertical-align: middle;
+                line-height: 0;
+            }
+        }
     }
     
     h2 {
@@ -111,7 +129,7 @@
         text-align: center;
     }
     
-    input {
+    input, textarea, select {
         .rounded(10px);
         border: 1px solid #d6d6d6;
         padding: 10px 15px;
@@ -120,6 +138,7 @@
         font-size: 1.0em;
         width: 100%;        
         .transition(0.3s);
+        background-color: #fff;
         
         &:focus {
             outline: none;
@@ -128,14 +147,32 @@
         }
     }
     
-    //columns
-    .col-container {
-        overflow: hidden;
-        width: 105%;
+    select {
+        height: 40px;    
     }
     
-    .col-2 {
-        width: 50%;
+    button {
+        border: none;
+        .primary-font-regular;
+        
+        &:focus {
+            outline: none;
+            .box-shadow(0px 0px 5px rgba(0,0,0,0));
+        }
+    }
+    
+    textarea {
+        height: 100px;    
+    }
+    
+    //columns
+    .col-container {
+        overflow: visible;
+        width: 100%;
+    }
+    
+    .col-6 {
+        width: 100%;
         float: left;
         padding: 0 5% 5% 0;
     }
@@ -144,24 +181,47 @@
         width: 100%;
         padding: 0 0 5% 0;
     }
+    
+    .col-4 {
+        width: 100%;
+        padding: 0 0 5% 0;
+    }
+    
+    .col-8 {
+        width: 100%;
+    }
 }
 
 @media @medium {
     //body {background: green;}
     
+    h2 {
+        padding: 0 0 20px;       
+    }
+    
     //columns
     .col-container {
-        overflow: hidden;
+        overflow: visible;
         width: 105%;
     }
     
-    .col-2 {
+    .col-6 {
         width: 50%;
         float: left;
         padding: 0 5% 5% 0;
     }
     
     .col-3 {
+        width: 50%;
+        float: left;
+        padding: 0 5% 5% 0;
+        
+        &.sidebar {
+            width: 25%;    
+        }
+    }
+    
+    .col-4 {
         width: 50%;
         padding: 0 5% 5% 0;
         float: left;
@@ -171,24 +231,46 @@
             padding: 0 5% 0% 0;
         }
     }
+    
+    .col-8 {
+        width: 66.6666%;
+        padding: 0 5% 5% 0;
+        float: left;
+    }
+    
+    .col-3 + .col-8 {
+        float: right; //for side bars that are first followed by a col that spans the rest of space    
+    }
+    
+    .col-8 + .col-3 {
+        float: right; //for side bars that follow a col that spans the rest of space    
+    }
 }
 
 @media @large {
     //body {background: orange;}
     
+    
+    
     //columns
     .col-container {
-        overflow: hidden;
+        overflow: visible;
         width: 105%;
     }
     
-    .col-2 {
+    .col-6 {
         width: 50%;
         float: left;
         padding: 0 5% 5% 0;
     }
     
     .col-3 {
+        width: 25%;
+        float: left;
+        padding: 0 5% 5% 0;
+    }
+    
+    .col-4 {
         width: 33.3333%;
         padding: 0 5% 5% 0;
         float: left;

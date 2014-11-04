@@ -1,0 +1,107 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+@media @small {
+    .branding-box {
+        .box-shadow(inset 0px 8px 8px -5px rgba(50, 50, 50, 0.25));
+        margin: 0;
+        padding: @mobile-padding*2 @mobile-padding;
+        background-size: cover;
+        background-position: center center;
+        text-align: center;
+        position: relative;
+        
+        h2 {
+            padding: 0px 0 20px;
+            margin: 0;
+            color: #fff;
+            .primary-font-regular;
+            text-shadow: 1.5px 2.598px 1px rgba(0, 0, 0, 0.08);
+            font-size: 2.5em;
+            line-height: 1.0em;
+            position: relative;
+            z-index: 2;
+        }
+        
+        p {
+            color: #fff; 
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1.5px 2.598px 1px rgba(0, 0, 0, 0.08);
+        }
+        
+        a {
+            position: relative;
+            z-index: 2;   
+        }
+        
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            .transition(0.3s);
+        }
+    }
+}
+
+@media @medium {
+    .branding-box {
+        text-align: left;
+        
+        .abs-content {
+            margin-left: 50%;    
+        }
+        
+        h2 {
+            padding: 0px 0 20px;
+            margin: 0;
+            color: @primary-grey;
+            text-shadow: inherit;
+            font-size: 2.5em;
+            line-height: 1.0em;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+        
+        p {
+            color: fade(@primary-grey,80%);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.5em;
+            text-shadow: inherit;
+        }
+        
+        a {
+            font-size: .85em; 
+            padding: 8px 12px 10px;
+        }
+        
+        &:after {
+            background: rgba(0,0,0,0);
+        }        
+    }
+}
+
+@media @large {
+    .branding-box {
+        padding: @mobile-padding*4 @base-margin;
+        
+        p {
+            line-height: 1.5em;
+            font-size: 1.15em     
+        }   
+    }
+}
+
+@media @extra-large {
+    .branding-box {
+        padding: @mobile-padding*4 @base-margin*1.5;
+    }
+}
