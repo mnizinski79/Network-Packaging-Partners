@@ -153,22 +153,39 @@ function initCarousel() {
     });
 }
 
-function openSearch() {
-    
-    //make so click anywhere closes search box
-    $(document).click(function() {
-        $("body").removeClass("search-opened").addClass("close");//close the main nav and make the search show
-    });
-    
-    $("#primary-search").click(function(e){
-         e.stopPropagation();//make sure it doesn't close on iteself
-    });
-    
-}
-
-
 function initSearchToggle() {
-    openSearch();
+    $("#secondary-nav li.btn-search a").click(function(e){
+        
+        e.preventDefault();
+        
+        //remove the event handlers
+        $(document).off();
+        $("#primary-search").off();
+        
+        if($("body").hasClass("mobile-nav-open")){
+            $("body").removeClass("mobile-nav-open");
+            
+            setTimeout(function(){
+                $("body").toggleClass("search-open");
+            },500);
+            
+        } else {
+            $("body").toggleClass("search-open");
+        }
+        
+        $("#primary-search input:first").focus();
+        
+        if($(window).outerWidth() < 980){
+            $(document).click(function() {
+                $("body").removeClass("search-open");
+            });
+
+            $("#primary-search").click(function(e){
+                 e.stopPropagation();//make sure it doesn't close on iteself
+            });
+        }
+        
+    });
 }
 
 

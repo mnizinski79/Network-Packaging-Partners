@@ -6,17 +6,27 @@
         padding: @mobile-padding @mobile-padding @mobile-padding*2;
         margin: 0;
         background-color: @light-grey;
-        .transition(0.2s);
+        .transition(0.3s);
+        transition-delay: 0.2s;
+        overflow: hidden;
+        z-index: -1;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
         
         fieldset {
+            margin-left: 35px;
             
             &:before {
-                float: left;
-                width: 20px;
                 font-size: 2em;
                 .transform(translateY(25px));
                 color: @secondary-grey;
                 text-align: center;
+                position: absolute;
+                left: @mobile-padding;
             }
         }
         
@@ -29,8 +39,7 @@
             border-width: 0;
             border-bottom-width: 2px;
             font-size: 2.0em;
-            margin-left: 25px;
-            width: auto;
+            width: 100%;
             background: none;
             
             &:focus {
