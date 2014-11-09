@@ -2,8 +2,48 @@
 @import "../mixins.less";
 
 @media @small {
+    
+    #page-modal-wrapper {
+        clear: both;
+        position: absolute;
+        z-index: 200;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        #page-info-modal {
+            position: absolute;
+            left: @mobile-padding;
+            right: @mobile-padding;
+            background: #fff;
+            .box-shadow(0 0 8px 3px fade(@primary-grey,20%));
+            padding: 40px;
+
+            h3 {
+                border: 0;
+                margin-top: 0;
+                color: @secondary-color;
+            }
+            
+            p:last-of-type {
+                margin-bottom: 0;   
+            }
+
+            &:after {
+                bottom: 100%;
+                content: " ";
+                height: 17px;
+                width: 32px;
+                position: absolute;
+                background: url(../img/pointer-arrow.png) 50% 50% no-repeat;
+                margin-left: -16px;
+                left: 50%;
+            }
+        }
+    }
+    
     article {
-        overflow: hidden;   
+        overflow: hidden;
     }
     
     #container > article > div:nth-child(2n+0) {
@@ -289,6 +329,10 @@
             
         }
         
+        #date-picker {
+            margin-bottom: 10px;    
+        }
+        
         form {
             
             padding: 30px 0 0 0;
@@ -321,6 +365,29 @@
 }
 
 @media @medium {
+    
+    #page-modal-wrapper {
+        #page-info-modal {            
+            &.left {
+                &:after {
+                    left: 15%; 
+                }
+            }
+            
+            &.center {
+                &:after {
+                    left: 50%;
+                }
+            }
+            
+            &.right {
+                &:after {
+                    left: 85%;
+                }
+            }
+        }
+    }
+    
     .intro-container {
         
         h2 {
@@ -431,6 +498,14 @@
 }
 
 @media @large {
+    
+    #page-modal-wrapper {
+        #page-info-modal {
+            left: @base-margin;
+            right: @base-margin;
+        }
+    }
+    
     .intro-container {
         padding: @mobile-padding*2 @base-margin;    
     }
@@ -442,6 +517,14 @@
 }
 
 @media @extra-large {
+    
+    #page-modal-wrapper {
+        #page-info-modal {
+            left: @base-margin*1.5;
+            right: @base-margin*1.5;
+        }
+    }
+    
     .intro-container {
         padding: @mobile-padding*2 @base-margin*1.5;   
     }

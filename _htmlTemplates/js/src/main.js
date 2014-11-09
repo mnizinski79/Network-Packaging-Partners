@@ -58,6 +58,7 @@ function initCarousel() {
         var _pageCount = 1;
         var _itemsPerPage = 1;
         var _parentSection = _this.parent();
+        var _currentPage = 1;
         
         var _wrapperWidth, _itemWidth, _itemPadding, _carouselWidth, _navDots = "";
         
@@ -97,63 +98,122 @@ function initCarousel() {
             });
             
             _this.width(_carouselWidth);
+            _this.css("left",0);
+            _currentPage = 1;
         };
         
-        _setSize();
+        //_setSize();
         
-        //create the number of dots
-		for (var i=0; i<_pageCount; i++){
-			if (i === 0) {
-				_navDots += "<span class='nav-dot-current' data-index='" + i + "'></span>";
-			} else {
-				_navDots += "<span data-index='" + i + "'></span>";
-			}
-		}
-        
-        //create controls
-        $("<div class='scrollControls'><div class='scroll-btn-prev' data-carousel='" + _carouselID + "'><span>prev</span></div><div class='scroll-btn-next' data-carousel='" + _carouselID + "'><span>next</span></div></div>").appendTo(_parentSection);
-        $("<div class='nav-dots'>" + _navDots + "</div>").appendTo(_parentSection);
-        
-        //set arrow clicks
-        $(".scroll-btn-prev").click(function(e){
-            e.preventDefault();
+        function navigateItem(event){
+            var _arg = event.data.directive;
+            var _caller = event.target;
             
-            var _target = $(this).attr("data-carousel");
-            var _targetObj = $("#" + _target).find(".carousel").first();
-            var _distance = parseInt(_itemWidth * _itemsPerPage);
-            var _currentPos = parseInt(_targetObj.css("left"));
+            var _target;
             
-            if(_currentPos < 0){
-                var _newPos = _currentPos + _distance;
-                _targetObj.css({
-                    "left": _newPos
-                });
+            if(event.data.swipeTarget){
+                _target = event.data.swipeTarget;
+            } else {
+                _target = $(_caller).attr("data-carousel");
             }
-        });
-        
-        $(".scroll-btn-next").click(function(e){
-            e.preventDefault();
             
-            var _target = $(this).attr("data-carousel");
             var _targetObj = $("#" + _target).find(".carousel").first();
             var _distance = parseInt(_itemWidth * _itemsPerPage);
             var _currentPos = parseInt(_targetObj.css("left"));
             var _maxScroll = _distance * (_pageCount-1);
+            var _index = $(_caller).attr("data-index");
+            var _newPos;
             
-            if(_currentPos > -(_maxScroll)){
-                var _newPos = _currentPos - _distance;
+            if(_arg === "moveNext"){
+                if(_currentPos > -(_maxScroll)){
+                    _newPos = _currentPos - _distance;
+                    _targetObj.css({
+                        "left": _newPos
+                    });
+
+                    _currentPage += 1;
+                    updateNavDots();
+                }
+            } else if(_arg === "movePrev"){
+                if(_currentPos < 0){
+                    _newPos = _currentPos + _distance;
+                    _targetObj.css({
+                        "left": _newPos
+                    });
+
+                    _currentPage -= 1;
+                    updateNavDots();
+                }
+            } else if(_arg === "jump"){
+                _newPos = -(_distance*_index);
                 _targetObj.css({
                     "left": _newPos
                 });
+
+                _currentPage = parseInt(_index) + 1;
+                updateNavDots();
             }
-        });
+        }
         
-        $(window).resize( _setSize ).trigger("resize");
+        //create the number of dots
+        function drawNavDots(){
+            $("#navDots_" + _carouselID).remove();
+            
+            _navDots = "";
+            
+            for (var i=0; i<_pageCount; i++){
+                if (i === 0) {
+                    _navDots += "<span class='nav-dot-current' data-index='" + i + "' data-carousel='" + _carouselID + "'></span>";
+                } else {
+                    _navDots += "<span data-index='" + i + "' data-carousel='" + _carouselID + "'></span>";
+                }
+            }
+            
+            $("<div id='navDots_" + _carouselID + "' class='nav-dots'>" + _navDots + "</div>").appendTo(_parentSection);
+            $("#navDots_" + _carouselID).find("span").click({directive:"jump"},navigateItem);
+        }
+        
+        //drawNavDots();
+        
+        //create controls
+        $("<div id='scrollControls_" + _carouselID + "' class='scrollControls'><div class='scroll-btn-prev' data-carousel='" + _carouselID + "'><span>prev</span></div><div class='scroll-btn-next' data-carousel='" + _carouselID + "'><span>next</span></div></div>").appendTo(_parentSection);
+        
+        //set swipe
+		var _swipeArea = $("#" + _carouselID).hammer();
+		_swipeArea.on("swipeleft",{directive:"moveNext",swipeTarget:_carouselID},navigateItem);
+		_swipeArea.on("swiperight",{directive:"movePrev",swipeTarget:_carouselID},navigateItem);
+		
+		_swipeArea.on("touch", function(ev) {
+			ev.gesture.preventDefault();
+		});
+        
+        //set arrow clicks
+        $("#scrollControls_" + _carouselID).find(".scroll-btn-prev").click({directive:"movePrev"},navigateItem);
+        $("#scrollControls_" + _carouselID).find(".scroll-btn-next").click({directive:"moveNext"},navigateItem);
+        
+        //update the nav dots
+        function updateNavDots(){
+            $("#navDots_" + _carouselID).find("span").each(function(){
+                var _this = $(this);
+                
+                $(this).removeClass("nav-dot-current");
+                
+                if(parseInt(_this.attr("data-index")) === parseInt(_currentPage-1)){
+                    _this.addClass("nav-dot-current");
+                }
+            });
+        }
+        
+        $(window).resize( function(){
+            _setSize();
+            drawNavDots();
+        }).trigger("resize");
         
     });
 }
 
 function initSearchToggle() {
+    $("#secondary-nav li.btn-search a").wrapInner("<span></span>");
+    
     $("#secondary-nav li.btn-search a").click(function(e){
         
         e.preventDefault();
@@ -188,6 +248,72 @@ function initSearchToggle() {
     });
 }
 
+function initDatePicker(){
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd;
+    } 
+
+    if(mm<10) {
+        mm='0'+mm;
+    } 
+
+    var newdate = mm + "-" + dd + "-" + yyyy;
+    
+    $("#date-picker").DatePicker({
+        flat: true,
+        date: newdate,
+        current: newdate,
+        format: "m-d-Y",
+        calendars: 1,
+        starts: 0,
+        prev: "",
+        next: "",
+        onChange: function(formated){
+            $('#date-select').val(formated);
+        }
+    });
+}
+
+function initPageLeads(){
+    $(".page-lead:nth-child(3n+3)").attr("data-orientation","right");
+    $(".page-lead:nth-child(3n+2)").attr("data-orientation","center");
+    $(".page-lead:nth-child(3n+1)").attr("data-orientation","left");
+    
+    $(".page-lead").hover(function(){
+        $("#page-modal-wrapper").fadeOut(300,function(){
+            $(this).remove();
+        });
+        
+        var _this = $(this);
+        var _title = _this.attr("data-title");
+        var _desc = _this.attr("data-content");
+        var _offset = _this.offset();
+        var _orientation = _this.attr("data-orientation");
+        
+        var _modalContent = "<div id='page-info-modal' class='" + _orientation + "'><h3>" + _title + "</h3><p>" + _desc + "</p></div>";
+        
+        $(_modalContent).prependTo("body").wrapAll("<div id='page-modal-wrapper'></div>").css({
+            "opacity":0,
+            "display":"block",
+            "top": (_offset.top + _this.outerHeight()) - 50
+        }).animate({
+            "top": (_offset.top + _this.outerHeight()) - 30,
+            "opacity":1
+        },850,'easeOutExpo');
+        
+    }, function(){
+        $("#page-modal-wrapper").fadeOut(150,function(){
+            $(this).remove();
+        });
+        
+    });
+}
+
 
 // jquery is ready
 $(document).ready(function(){
@@ -196,5 +322,7 @@ $(document).ready(function(){
     initMobileTrigger();
     initCarousel();
     initSearchToggle();
+    initPageLeads();
+    initDatePicker();
     
 });

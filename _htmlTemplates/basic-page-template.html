@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/datepicker.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>        
         
     </head>
@@ -30,6 +31,12 @@
         <!-- Add your site or application content here -->
         
         <div id="container">
+            <form id="primary-search">
+                <fieldset class="icon-ico-magnifing-glass">
+                    <label>Search</label>
+                    <input type="text" id="input-primary-search" name="input-primary-search">
+                </fieldset>
+            </form>
             
             <header>
                 <h1 id="logo">Network Packaging Partners</h1>
@@ -45,7 +52,7 @@
                     <ul id="secondary-nav">
                         <li><a href="#">Candidates</a></li>
                         <li><a href="#">Companies</a></li>
-                        <li class="btn-search"><a href="#"><span>Search</span></a></li>
+                        <li class="btn-search"><a href="#">Search</a></li>
                     </ul>
                     
                     <ul id="ancilary-nav">
@@ -289,6 +296,60 @@
                 
                 <div class="secondary-content">
                     <div class="col-container">
+                        <ul class="carousel">
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+
+                            <li class="carousel-item">
+                                <a href="#">
+                                    <img src="img/img-upcoming.jpg">
+                                    <h3>Join Us at Health Pack</h3>
+                                    <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
+                                </a>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
+                
+                <div class="secondary-content">
+                    <div class="col-container">
                         <h2>Become a partner</h2>
                         <p>
                             Schedule an appointment below and we'll call you when it works with your schedule. 
@@ -334,8 +395,14 @@
                             <div class="col-4">
                                 <h3>Tell us when you'd like to chat:</h3>
                                 <div id="date-picker">
-                                    [calendar]
+                                    <input name="date-select" id="date-select" type="hidden">
                                 </div>
+                                <select name="select-jobs-interested" id="select-jobs-interested">
+                                    <option selected value="null">Select a time...</option>
+                                    <option value="Job 1">Job 1</option>
+                                    <option value="Job 2">Job 2</option>
+                                    <option value="Job 3">Job 3</option>
+                                </select>
                             </div>
 
                             <fieldset class="btn-row">
@@ -347,6 +414,26 @@
                 
                 <div class="secondary-content">
                     <div class="col-container">
+                        <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                            <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                            <h3>Package Engineering &amp; Design</h3>
+                            <p>Lorium iosum dolar sit amet</p>
+                        </a>
+
+                        <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                            <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                            <h3>Package Engineering &amp; Design</h3>
+                            <p>Lorium iosum dolar sit amet</p>
+                        </a>
+
+                        <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
+                            <figure><img src="img/svgs/img-ico-design.svg"></figure>
+                            <h3>Package Engineering &amp; Design</h3>
+                            <p>Lorium iosum dolar sit amet</p>
+                        </a>
+                        
+                        
+                        
                         <a href="#" class="col-4 page-lead" data-title="It’s all in how we start." data-content="Ut lacinia, metus eu rhoncus accumsan, neque dolor eleifend metus, a tincidunt eros urna sit amet. Vitae accumsan. Aliquam erat volutpat. Mauris ultrices quam id orci egestas sagittis.">
                             <figure><img src="img/svgs/img-ico-design.svg"></figure>
                             <h3>Package Engineering &amp; Design</h3>
@@ -392,7 +479,12 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        
         <script src="js/plugins.js"></script>
+        <script src="js/datepicker.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.hammer.js"></script>
+        
         <script src="js/main-min.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
