@@ -78,3 +78,12 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/**
+ * Include tweaks requested by hosting providers.  You can safely
+ * remove either the file or comment out the lines below to get
+ * to a vanilla state.
+ */
+if (file_exists(ABSPATH . 'hosting_provider_filters.php')) {
+	include('hosting_provider_filters.php');
+}

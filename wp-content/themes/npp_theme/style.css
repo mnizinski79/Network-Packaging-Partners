@@ -1,0 +1,12 @@
+/*
+Theme Name: NPP Theme
+Description: NPP Custom Theme
+Version: 1.0
+Author: Amy Lashley
+Author URI: http://www.amylashley.net
+*/
+
+@import url("css/normalize.css");
+@import url("css/main.css");
+@import url("css/global.css");
+@import url("css/datepicker.css");

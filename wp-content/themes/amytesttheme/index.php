@@ -1,12 +1,20 @@
 <?php get_header(); ?>
 <article>
-                <div id="home-intro" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/img-hero-1.jpg);">
+               
+                <?php
+                $post_id = get_the_ID();
+                $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
+
+                $thumbnail_id    = get_post_thumbnail_id($post_id);
+                $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+                
+
+                ?>
+                <div id="home-intro" style="background-image:url(<?php echo $feat_image; ?>);">
                     <div class="abs-content">
-                        <h1>More than just the fancy wrapping</h1>
-                        <p>
-                            We bring a fresh perspective to packaging, with unparalleled expertise and a network of experienced resources. 
-                        </p>
-                        <a href="#" class="btn dark accent">What is Packaging</a>
+                        <h1><?php echo $thumbnail_image[0]->post_title; ?></h1>
+                        <?php cc_featured_image_caption(); ?>                       
                     </div>
                 </div>
                 
@@ -59,29 +67,25 @@
                         <div class="container-feed-positions col-3">
                             <h3>Positions <a href="#" class="btn primary">View all</a></h3>
                             <ul>
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <h4 class="position-location">New York City: <strong>10017</strong></h4>
-                                        <h3>Packaging Engineer</h3>
-                                        <p>Lorium ipsum dolar sit amet tis fact.</p>
-                                    </a>
-                                </li>
+                                <?php $recent_posts = wp_get_recent_posts(array(
+                                                        'numberposts' => 3,                                                        
+                                                        'orderby' => 'post_date',
+                                                        'order' => 'DESC',                                                        
+                                                        'post_type' => 'position',
+                                                        'post_status' => 'publish'));
+                                    foreach( $recent_posts as $recent ){  
+                                        //var_dump($recent); die();
+                                        $position_city = get_post_meta($recent["ID"], 'position_city', true );
+                                        $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
+                                        echo '<li>';
+                                        echo '<a href="'.get_permalink($recent["ID"]).'">';
+                                        echo '<h4 class="position-location">'.$position_city.': <strong>'.$position_zipcode.'</strong></h4>';
+                                        echo '<h3>'.$recent["post_title"].'</h3>';
+                                        echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                        echo '</a>';
+                                        echo '</li>';
+                                    }
+                                ?>                               
                             </ul>
                         </div>
                         
@@ -89,13 +93,29 @@
                             <h3>Upcoming <a href="#" class="btn primary">View all</a></h3>
                             
                             <ul>
-                                <li>
-                                    <a href="#">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/img-upcoming.jpg">
-                                        <h3>Join Us at Health Pack</h3>
-                                        <p>Mar. 3-5, 2015 — Norfolk, Virginia</p>
-                                    </a>
-                                </li>
+                                 <?php $recent_posts = wp_get_recent_posts(array(
+                                                        'numberposts' => 1,                                                        
+                                                        'orderby' => 'post_date',
+                                                        'order' => 'DESC',                                                        
+                                                        'post_type' => 'event',
+                                                        'post_status' => 'publish'));
+                                    foreach( $recent_posts as $recent ){  
+                                        echo '<li>';
+                                        echo '<a href="'.get_permalink($recent["ID"]).'">';
+                                        $image = wp_get_attachment_url(get_post_thumbnail_id($recent["ID"]));
+                                        if ($image!='' && $image){
+                                            echo '<img src="'.$image.'">';
+                                        }else {
+                                            echo '<img src="'.get_template_directory_uri().'/img/img-news-1.jpg">';
+                                        }
+                                        echo '<h3>'.$recent['post_title'].'</h3>';
+                                        $event_date = get_post_meta($recent["ID"], 'event_date', true );
+                                        echo '<p>'.$event_date.'</p>';
+                                        echo '</a>';
+                                        echo '</li>';
+                                    }
+                                ?>
+                                
                             </ul>
                         </div>
                         
@@ -110,8 +130,7 @@
                                                         'order' => 'DESC',                                                        
                                                         'post_type' => 'post',
                                                         'post_status' => 'publish'));
-                                    foreach( $recent_posts as $recent ){   
-                                        //var_dump($recent); die(); 
+                                    foreach( $recent_posts as $recent ){  
                                         echo '<li>';                                    
                                         echo '<a href="' . get_permalink($recent["ID"]) . '">';
                                         $image = wp_get_attachment_url(get_post_thumbnail_id($recent["ID"]));
@@ -124,14 +143,11 @@
                             
                                         echo '<div class="news-excerpt">';
                                         echo '<h4 class="position-location">'.date('M. d, Y',strtotime($recent['post_date'])).'</h4>';  //the_date('Y-m-d', '<h4 class="position-location">', '</h4>');
-                                        //echo '<h4 class="position-location">'.$recent['post_date'].'</h4>';  //the_date('Y-m-d', '<h4 class="position-location">', '</h4>');
-                                        
                                         echo '<h3>'.$recent["post_title"].'</h3>';
                                         echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
                                         echo '</div>';
                                         echo '</a>';
                                         echo '</li>';
-                                       // echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
                                     }
                                 ?>                                
                             </ul>

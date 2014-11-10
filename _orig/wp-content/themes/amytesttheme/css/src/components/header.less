@@ -1,0 +1,350 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+header {
+    @media @small {
+        background: fade(#ffffff,80%);
+        .box-shadow(0px 0px 8px 0px rgba(40, 40, 40, 0.65));
+        display: block;
+        width: 100%;
+        padding: @mobile-padding;
+        position: relative;
+        z-index: 20;
+        
+        h1 {
+            margin: 0;
+            padding: 0;
+            
+            &#logo {
+                background: url(../img/logo-npp.svg) 50% 50% no-repeat;  
+                .hide-text;
+                font-size: 0;
+                line-height: 0;
+                background-size: contain;
+                width: 130px;
+                padding-top: 55px;
+            }
+        }
+        
+        .nav-trigger {
+            background: url(../img/svgs/mobile-toggle-open.svg) 100% 20px no-repeat;
+            background-size: contain;
+            display: block;
+            height: 55px;
+            width: 30px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            .hide-text;
+        }
+        
+        nav#nav-container {
+            position: fixed;
+            top: 0;
+            /*right: 0;*/
+            right: -40%;
+            bottom: 0;
+            width: 40%;
+            background: @primary-grey;
+            .transform(translateX(0));
+            
+            ul {
+                margin: 0;
+                padding: 0px;
+                list-style: none;
+                border-bottom: 1px solid fade(#fff,10%);
+                
+                &#primary-nav {
+                    border-bottom: 0; 
+                    margin: 10px 0;
+                }
+                
+                &#secondary-nav {
+                    padding: 0 0 10px;
+                }
+                
+                &#ancilary-nav {
+                    border-bottom: 0;
+                    padding: 10px 0 0;
+                    font-size: .95em;
+                    
+                    li a {
+                        color: fade(#fff,80%);   
+                    }
+                }
+                
+                li {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    
+                    a {
+                        display: block;
+                        margin: 0;
+                        padding: 8px 20px;
+                        color: #fff;
+                        .transition(0.3s);
+                        
+                        &:hover {
+                            background: darken(@primary-grey,5%);   
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media @medium {
+        
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        
+        h1 {
+            &#logo {
+                width: 160px;
+                padding-top: 70px;
+            }
+        }
+    }
+
+    @media @large {
+        
+        padding: 0px 0 0 0; 
+        margin-top: 30px;
+        height: 125px;
+        
+        background: none;
+        .box-shadow(initial);
+        
+        h1 {
+            &#logo {
+                width: 170px;
+                position: absolute;
+                left: @base-margin;
+                top: 0px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+        
+        .nav-trigger {
+            display: none;
+        }
+        
+        nav#nav-container {
+            position: absolute;
+            top: 0px;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: none;
+            
+            &:after {
+                content: "";
+                position: absolute;
+                background: url(../img/bg-header.png) @base-margin 0% no-repeat;
+                width: 100%;
+                height: 100%;
+                top: -30px;
+                left: 0;
+            }
+            
+            ul {
+                margin: 0;
+                padding: 0px;
+                list-style: none;
+                border-bottom: 0px solid fade(#fff,10%);
+                
+                &#primary-nav {
+                    border-bottom: 0; 
+                    padding: 0;
+                    margin: 0;                    
+                    margin-left: 27%;
+                    float: left;
+                    z-index: 2;
+                    position: relative;
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        
+                        a {
+                            margin: 0;
+                            padding: 35px 20px 25px;
+                            color: @secondary-color;
+                            
+                            &:hover {
+                                background: @secondary-color;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+                &#secondary-nav {
+                    padding: 0;
+                    margin: 0 @base-margin 0 0;
+                    float: right;
+                    z-index: 2;
+                    position: relative;
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        padding-top: 22px;
+                        margin: 0 0 0 5px;
+                        
+                        a {
+                            margin: 0;
+                            padding: 8px 15px;
+                            color: #fff;
+                            background: @primary-color;
+                            .rounded(10px);
+                            font-size: .65em;
+                            
+                            &:hover {
+                                background: darken(@primary-color,10%);      
+                            }
+                        }
+                        
+                        &.btn-search { 
+                            a {
+                                .icon-font;
+                                background: none;
+                                border: 2px solid @primary-color;
+                                .rounded(50%);
+                                width: 35px;
+                                height: 35px;
+                                padding: 9px 0;
+                                text-align: center;
+                                
+                                span {
+                                    display: none;    
+                                }
+                                
+                                &:after {
+                                    content: "\e602";
+                                    color: @primary-color;
+                                    font-size: 1.15em;
+                                    line-height: 0;
+                                    padding-left: 2px;
+                                }
+                                
+                                &:hover {
+                                    background: darken(@primary-color,10%);
+                                    border: 2px solid darken(@primary-color,10%);
+                                    
+                                    &:after {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &#ancilary-nav {
+                    border-bottom: 0;
+                    padding: 0 @base-margin;
+                    margin: 0;
+                    font-size: .95em;
+                    position: absolute;
+                    top: -30px;
+                    left: 0;
+                    text-align: right;
+                    right: 0;
+                    height: 30px;
+                    z-index: 2;
+                    /*background: rgba(0,0,0,0.45);*/
+                    
+                    li {
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                        font-size: .85em;
+                        
+                        a {
+                            color: fade(#fff,80%); 
+                            padding: 4px 0px 0;
+                            display: inline-block;
+                            
+                            &:hover {
+                                background: none;
+                                color: #fff;
+                            }
+                        }
+                        
+                        &:after {
+                            content: "•"; 
+                            color: fade(#fff,80%);
+                            display: inline-block;
+                            padding: 0 8px;
+                        }
+                        
+                        &:last-of-type {
+                            &:after {
+                                content: " "; 
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    @media @extra-large {
+        h1 {
+            &#logo {
+                left: @base-margin*1.5;
+            }
+        }
+        
+        nav#nav-container {
+            
+            &:after {
+                background: url(../img/bg-header-large.png) @base-margin*1.5 0% no-repeat;
+            }
+            
+            ul {
+                
+                &#primary-nav {
+                    
+                    li {
+                        
+                        display: inline-block;
+                        font-size: 1.25em;
+                        
+                        a {
+                            margin: 0;
+                            padding: 35px 20px 25px;
+                            color: @secondary-color;
+                            
+                            &:hover {
+                                background: @secondary-color;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+                
+                &#secondary-nav {
+                    margin: 0 @base-margin*1.25 0 0;
+                }
+                
+                &#ancilary-nav {
+                    padding: 0 @base-margin*1.25;
+                    right: 0;
+                    height: 30px;
+                }
+            }
+        }
+        
+    }
+}
