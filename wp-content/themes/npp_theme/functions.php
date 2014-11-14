@@ -91,3 +91,45 @@ function npp_load_javascript_files() {
  
 }
 
+//Custom Search Functionality
+function search_template_chooser($template)   
+{    
+
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'position' )   
+  {
+   
+    return locate_template('search-position.php');  //  redirect to archive-search.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'search_template_chooser');  
+
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function npp_widgets_init() {
+
+  register_sidebar( array(
+    'name' => 'Default Right Sidebar',
+    'id' => 'default_right_1',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name' => 'Search Sidebar',
+    'id' => 'search_sidebar',
+    'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ) );
+}
+add_action( 'widgets_init', 'npp_widgets_init' );
+

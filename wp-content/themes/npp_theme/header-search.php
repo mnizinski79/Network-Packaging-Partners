@@ -31,7 +31,7 @@
         
 </head>
 <body>
-    
+
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -90,3 +90,20 @@
 
 
             </header>
+
+        <div id="page-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
+                <div class="abs-content">                   
+                    <h1>Search Results</h1>
+                </div>
+
+                <div class="share-box">
+                    <h3>Share:</h3>
+                    <ul>
+                        <li class="social-linkedin"><a href="#"><span>Linked In</span></a></li>
+                        <li class="social-twitter"><a href="#"><span>Twitter</span></a></li>
+                        <li class="social-googleplus"><a href="#"><span>Google Plus</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            

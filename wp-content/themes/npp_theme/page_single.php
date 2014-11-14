@@ -1,10 +1,11 @@
 <?php
 /*
- * Template Name: NPP Single Page
+ * Template Name: NPP Custom Single Page
  * Description: A Page Template with no sidebar
  */
 
- get_header('single'); ?>    
+ get_header('single'); ?>   
+
             
             <article>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
