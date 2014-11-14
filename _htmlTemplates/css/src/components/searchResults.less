@@ -1,0 +1,126 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+.results-list {
+    
+    
+    @media @small {
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                margin: 0;
+                padding: 0;
+                list-style: none; 
+
+                a {
+                    display: block;
+                    margin: 0 0 30px 0;
+                    padding: 0;
+                    position: relative;
+                    overflow: hidden;
+
+                    h3 {
+                        border: 0;
+                        margin: 0;
+                        padding: 0px 0 5px;
+                        color: @primary-color;
+                        font-size: 2em;                        
+                        .transition(0.3s);
+                        line-height: 1.15em;
+                        text-transform: none;
+                        .primary-font-regular;
+                    }
+                    
+                    .list-content {
+                        float: left;
+                        overflow: hidden;
+                        width: 75%;
+                        padding: 0 5% 5% 0;
+                    }
+
+                    h4 {
+                        color: fade(@primary-grey,90%);
+                        font-weight: 400;
+                        font-size: .75em;
+                        margin: 0;
+                        padding: 0; 
+                        text-transform: uppercase;
+                        float: left;
+                        width: 25%;
+                        padding: 0 5% 5% 0;
+                        text-align: center;
+                        
+                        &:before {
+                            margin: 0px 0 10px;
+                            content: "";
+                            height: 4px;
+                            background: #ececec;
+                            display: block;
+                            width: 100%;
+                        }
+                        
+                        &:after {
+                            margin: 10px 0 0px;
+                            content: "";
+                            height: 4px;
+                            background: #ececec;
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        color: fade(@primary-grey,90%);
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    &:after {
+                        .icon-font;
+                        content: "\e600";
+                        color: @primary-color;
+                        display: block;
+                        width: 20px;
+                        height: 22px;
+                        padding: 0;
+                        text-align: center;
+                        font-size: 1.5em;
+                        .transition(0.3s);
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        margin-top: -11px;
+                    }
+
+                    &:hover {
+
+                        h3 {
+                            color: @secondary-color;    
+                        }
+
+                        &:after {
+                            color: @secondary-color;
+                            right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media @medium {
+
+    }
+
+    @media @large {
+
+    }
+
+    @media @extra-large {
+
+    }
+}
