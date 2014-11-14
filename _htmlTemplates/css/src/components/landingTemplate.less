@@ -42,6 +42,47 @@
         }
     }
     
+    #form-primary-search-results {
+        
+        margin-bottom: 50px;
+        
+        label {
+            display: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        fieldset {
+            margin-left: 0px;
+            position: relative;
+            
+            &:before {
+                font-size: 2em;
+                .transform(translateY(25px));
+                color: @secondary-grey;
+                text-align: center;
+                position: absolute;
+                left: 0;
+            }
+        }
+        
+        input {
+            .rounded(0);
+            border-width: 0;
+            border-bottom-width: 2px;
+            font-size: 2.0em;
+            width: 100%;
+            background: none;
+            margin-left: 35px;
+            
+            &:focus {
+                background: none;
+                box-shadow: auto;
+                box-shadow: initial;
+            }
+        }
+    }
+    
     article {
         overflow: hidden;
     }
