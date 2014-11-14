@@ -1,6 +1,6 @@
 /* ## parallax #################################################### */    
 
-function initParalax(){
+function initParalax() {
     var _winHeight;
     var _speed = 0.5;
     
@@ -28,7 +28,7 @@ function initParalax(){
     
     //bind to scroll
     
-    function handleScroll(){          
+    function handleScroll() {          
         $(".parallax").css("background-position", function(){            
             var _offset = $(this).offset();
             var _top = _offset.top;
