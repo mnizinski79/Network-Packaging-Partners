@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+
+<?php get_header(); 
+
+?>
 <article>
                
                 <?php
@@ -21,10 +24,11 @@
                 <div id="find-positions">
                     <div class="col-container">
                         <form id="form-search-positions">
+                            <input type="hidden" name="post_type" value="position" />
                             <h2>Find Positions</h2>
                             <fieldset>
                                 <label for="input-search-positions">Search Positions</label>
-                                <input id="input-search-positions" name="input-search-positions" type="text">
+                                <input id="input-search-positions" name="s" type="text">
                                 <button type="submit" value="Search" id="btn-search" class="btn search" name="btn-search"><span>Search</span></button>
                                 <em class="tip-text"><strong>TIP:</strong> Use keywords such as “Package Design”</em>
                             </fieldset>
@@ -62,6 +66,8 @@
                         <a href="#" class="btn primary">See how we're different</a>
                     </div>
                 </div>
+
+                <?php echo do_shortcode('[npp-related-posts-slider]'); ?>
                 
                 <div id="content-feeds">
                     <div class="col-container">
