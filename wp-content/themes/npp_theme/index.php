@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <?php echo do_shortcode('[npp-related-posts-slider]'); ?>
+                
                 
                 <div id="content-feeds">
                     <div class="col-container">
@@ -163,5 +163,4 @@
                     </div>                    
                 </div>
             </article>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
