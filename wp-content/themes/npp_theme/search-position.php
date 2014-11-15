@@ -23,30 +23,41 @@ $args = array(
 
  get_header('search'); ?> 
  <article>
-    <div class="intro-container">
+    <div class="intro-container"> 
         <div class="col-container">
             <div class="main-content col-8">
-                       <h3>Search Results for : <?php echo "$s"; ?> </h3>  
-              
-                <?php if (have_posts()) : while (have_posts()) : the_post();
-                    $position_city = get_post_meta($post->ID, 'position_city', true );
-                    $position_zipcode = get_post_meta($post->ID, 'position_zipcode', true );
-                ?>
-              
-            <div class="secondary-content">
-                <div class="col-container">
-                    <div class="col-3">
-                        <p><?php echo $position_zipcode; ?><BR><?php echo $position_city; ?></p>  
-                    </div>
-                    <div class="col-9">
-                        <h4><a href="<?php the_permalink(); ?>" title="<?php the_title();     ?>"><?php the_title(); ?></a></h4>    
-                    <p><?php the_excerpt(); ?></p>                 
-                    </div>
+                <form id="form-primary-search-results">
+                    <fieldset class="icon-ico-magnifing-glass">
+                        <label>Search Results</label>
+                        <input type="text" name="input-search-results" id="input-search-results" value="<?php echo "$s"; ?>">
+                     </fieldset>
+                </form>
+                <div class="results-list">
+                    <ul>
+                    <?php if (have_posts()) : while (have_posts()) : the_post();
+                        $position_city = get_post_meta($post->ID, 'position_city', true );
+                        $position_zipcode = get_post_meta($post->ID, 'position_zipcode', true );
+                    ?>
+                    <li>
+                        <a href="<?php the_permalink(); ?>">
+                            <h4 class="position-location">
+                                <strong>Location</strong><br>
+                                <?php echo $position_city; ?>: 
+                                <strong><?php echo $position_zipcode; ?></strong>
+                            </h4>
+                            <div class="list-content">
+                                <h3><?php the_title(); ?></h3>
+                                <p>
+                                    <?php the_excerpt(); ?>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <?php endwhile; else : ?>
+                        <li><?php _e( '<h3>Sorry, there were no results matching your search.</h3> ' ); ?></li>
+                    <?php endif; ?>
+                    </ul>
                 </div>
-            </div>
-                <?php endwhile; else : ?>
-                    <p><?php _e( '<h4>Sorry, there were no results matching your search.</h4> ' ); ?></p>
-                <?php endif; ?>
             <?php echo paginate_links( $args ); ?>
             </div>
             <aside class="sidebar col-3">

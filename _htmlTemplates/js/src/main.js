@@ -314,6 +314,36 @@ function initPageLeads(){
     });
 }
 
+function initFormUpload() {
+    $(".form-file").each(function(){
+        var _this = $(this);
+
+        //add a new label
+        var _label = $("<label for='" + _this.attr("id") + "'>Select a File (.JPG, .RTF, or .PDF)</label>");
+        _label.insertBefore(_this);
+
+        _label.addClass("form-control");
+
+        //hide form file initial
+        _this.addClass("file-upload-hide");
+        
+        //add a cap image to appear as a button
+        function appendCap(){
+            var _capContent = "<div class='form-upload-cap'></div>'";
+            var _cap = $(_capContent);
+            _cap.appendTo(_label);
+        }
+        
+        appendCap();
+
+        _this.change(function(){
+            _label.text(_this.val().substr(_this.val().lastIndexOf("\\")+1));
+            appendCap();
+        });
+    });
+
+}
+
 
 // jquery is ready
 $(document).ready(function(){
@@ -324,5 +354,6 @@ $(document).ready(function(){
     initSearchToggle();
     initPageLeads();
     initDatePicker();
+    initFormUpload();
     
 });

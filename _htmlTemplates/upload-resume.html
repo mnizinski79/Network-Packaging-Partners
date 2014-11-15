@@ -75,22 +75,27 @@
                             keep your resume on file so we’ll have it when we do.
                         </p>
                         
-                        <figure class="uploader-graphic">
-                            upload indicator
-                            <figcaption>caption...</figcaption>
-                        </figure>
-                        
-                        <form>
-                            <input type="file" name="file-resume-upload" id="file-resume-upload">
-                            
-                            <div class="divider">or</div>
-                            
-                            <a href="#" class="btn api-call">Import from <span id="logo-linkedIn">Linked In</span></a>
-                            
-                            <fieldset class="btn-row">
-                                <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Search</span></button>
-                            </fieldset>
-                        </form>
+                        <div class="upload-container">
+                            <figure class="uploader-graphic">
+                                <div class="fig-content">
+                                    <img src="img/svgs/resume-upload-graphic.svg">
+                                </div>                                
+                                <div class="loader-sprite"></div>
+                                <figcaption>uploading...</figcaption> 
+                            </figure>
+
+                            <form id="form-resume-upload">
+                                <input class="form-file" type="file" name="file-resume-upload" id="file-resume-upload">
+
+                                <div class="divider"><span>or</span></div>
+
+                                <a href="#" class="btn api-call">Import from <span id="logo-linkedIn">Linked In</span></a>
+
+                                <fieldset class="btn-row">
+                                    <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Upload Resume</span></button>
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
                     
                     <aside class="sidebar col-3">
@@ -106,30 +111,30 @@
                                 <label for="input-search-positions">Jobs interested in</label>
                                 <select>
                                     <option selected value="null">Jobs interested in...</option>
-                                    <option selected value="Job 1">Job 1</option>
-                                    <option selected value="Job 2">Job 2</option>
-                                    <option selected value="Job 3">Job 3</option>
+                                    <option value="Job 1">Job 1</option>
+                                    <option value="Job 2">Job 2</option>
+                                    <option value="Job 3">Job 3</option>
                                 </select>
                             </fieldset>
                             
                             <fieldset>
                                 <label>Email Address:</label>
-                                <input type="email" name="input-email" id="input-email">
+                                <input type="email" name="input-email" id="input-email" placeholder="Email Address">
                             </fieldset>
                             
                             <fieldset>
                                 <label for="input-search-positions">Location</label>
                                 <select>
                                     <option selected value="null">Location...</option>
-                                    <option selected value="New York">New York</option>
-                                    <option selected value="Atlanta">Atlanta</option>
-                                    <option selected value="Seattle">Seattle</option>
+                                    <option value="New York">New York</option>
+                                    <option value="Atlanta">Atlanta</option>
+                                    <option value="Seattle">Seattle</option>
                                 </select>
                             </fieldset>
                             
                             <fieldset>
-                                <input type="checkbox" value="agree">
-                                <label>Send me jobs I’m interested in</label>
+                                <input type="checkbox" value="agree" name="check-agree" id="check-agree">
+                                <label class="box-label" for="check-agree">Send me jobs I’m interested in</label>
                             </fieldset>
                             
                             <fieldset class="btn-row">
