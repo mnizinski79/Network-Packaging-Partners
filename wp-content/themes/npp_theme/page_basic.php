@@ -71,10 +71,18 @@
                         </div>
                     </div>
                 </div>
+                <!--conditionally include related posts slider-->
                 <?php
                  if( get_post_meta($post->ID, 'npp-related-posts', true )){
                 ?>
                     <?php echo do_shortcode('[npp-related-posts-slider]'); 
+                }
+                ?>
+                <!--conditionally include child pages widget-->
+                 <?php
+                 if( get_post_meta($post->ID, 'npp-child-pages', true )){
+                ?>
+                    <?php echo do_shortcode('[npp-child-pages]'); 
                 }
                 ?>
                 
