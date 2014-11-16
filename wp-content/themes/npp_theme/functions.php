@@ -1,15 +1,7 @@
 <?php
 
 
-/*function my_wp_nav_menu_args( $args = '' ) {
-	var_dump($args); die();
-	$args['container'] = false;
-	$args['menu_id'] = 'primary-nav';
-	return $args;
-}
-add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );  */
-
-
+include('includes/related_posts_meta_box.php');
 
 register_nav_menus(
     array(
@@ -132,4 +124,5 @@ function npp_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'npp_widgets_init' );
+
 
