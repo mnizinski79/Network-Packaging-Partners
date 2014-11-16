@@ -1,15 +1,7 @@
 <?php
 
 
-/*function my_wp_nav_menu_args( $args = '' ) {
-	var_dump($args); die();
-	$args['container'] = false;
-	$args['menu_id'] = 'primary-nav';
-	return $args;
-}
-add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );  */
-
-
+include('includes/related_posts_meta_box.php');
 
 register_nav_menus(
     array(
@@ -107,29 +99,6 @@ function search_template_chooser($template)
 add_filter('template_include', 'search_template_chooser');  
 
 
-/**
- * Register our sidebars and widgetized areas.
- *
- */
-function npp_widgets_init() {
 
-  register_sidebar( array(
-    'name' => 'Default Right Sidebar',
-    'id' => 'default_right_1',
-    'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  ) );
 
-  register_sidebar( array(
-    'name' => 'Search Sidebar',
-    'id' => 'search_sidebar',
-    'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  ) );
-}
-add_action( 'widgets_init', 'npp_widgets_init' );
 

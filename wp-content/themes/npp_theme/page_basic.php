@@ -15,7 +15,7 @@
                         	<?php the_content(); ?>
                     		<?php endwhile; endif; ?>
                         </div>
-<?php  wp_reset_query(); ?>
+	
                  <aside class="sidebar col-3">
                            <?php dynamic_sidebar('Default Right Sidebar'); ?>
                         </aside>
@@ -71,8 +71,12 @@
                         </div>
                     </div>
                 </div>
-
-                <?php echo do_shortcode('[npp-related-posts-slider]'); ?>
+                <?php
+                 if( get_post_meta($post->ID, 'npp-related-posts', true )){
+                ?>
+                    <?php echo do_shortcode('[npp-related-posts-slider]'); 
+                }
+                ?>
                 
             </article>
 <?php get_footer(); ?>
