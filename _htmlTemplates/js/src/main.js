@@ -344,6 +344,38 @@ function initFormUpload() {
 
 }
 
+// ## Share functions #########################################
+function initShareLinks(){
+    $(".share-box a").click(function(){
+        
+        var _shareDir = $(this).attr("data-share");
+        var _softURL = window.location.href;
+        
+        var _fullURL;
+        
+        if(_shareDir === "twitter") {
+            _fullURL = encodeURI("https://twitter.com/intent/tweet?url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "facebook"){
+            _fullURL = encodeURI("http://www.facebook.com/sharer/sharer.php?u=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "linkedin") {
+            _fullURL = encodeURI("http://www.linkedin.com/shareArticle?mini=true&url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "googleplus") {
+            _fullURL = encodeURI("https://plus.google.com/share?url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } 
+        
+        return false;     
+    });
+    
+    function openShareWin(_shareURL){
+        var config; 
+        window.open(_shareURL,"Share This",config="height=440,width=520,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,directories=no,status=no"); 
+    }
+}
+
 
 // jquery is ready
 $(document).ready(function(){
@@ -355,5 +387,6 @@ $(document).ready(function(){
     initPageLeads();
     initDatePicker();
     initFormUpload();
+    initShareLinks();
     
 });

@@ -41,7 +41,7 @@
         <div id="container">
             <?php get_search_form(); ?>
             <header>
-                <h1 id="logo">Network Packaging Partners</h1>
+                <a href="/"><h1 id="logo">Network Packaging Partners</h1></a>
                 <a href="#" class="mobile nav-trigger">mobile trigger</a>
                 <nav id="nav-container">
                     <!--<ul id="primary-nav">
