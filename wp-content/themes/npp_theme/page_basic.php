@@ -73,6 +73,13 @@
                 </div>
                 <!--conditionally include related posts slider-->
                 <?php
+                 if( get_post_meta($post->ID, 'npp-find-positions', true )){
+                ?>
+                    <?php echo do_shortcode('[npp-find-positions]'); 
+                }
+                ?>
+                <!--conditionally include related posts slider-->
+                <?php
                  if( get_post_meta($post->ID, 'npp-related-posts', true )){
                 ?>
                     <?php echo do_shortcode('[npp-related-posts-slider]'); 

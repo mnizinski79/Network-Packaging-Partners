@@ -1,7 +1,7 @@
 <?php
 
 
-include('includes/related_posts_meta_box.php');
+include('includes/npp_meta_boxs.php');
 
 register_nav_menus(
     array(
