@@ -24584,6 +24584,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/plugins\/npp-child-pages\/npp-child-pages.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/npp-child-pages\/npp-child-pages.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/npp-child-pages\/template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/npp-child-pages\/template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/plugins\/npp-posts-slider\/carousel.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24629,6 +24647,87 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/wp-content\/plugins\/post-tags-and-categories-for-pages\/post-tag.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/post-tags-and-categories-for-pages\/post-tag.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/admin\/admin.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/admin\/admin.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/admin\/includes\/class-simple-page-sidebars-walker-page-checklist.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/admin\/includes\/class-simple-page-sidebars-walker-page-checklist.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/edit-sidebar-screen.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/edit-sidebar-screen.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/meta-box-page-sidebar.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/meta-box-page-sidebar.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/meta-box-sidebar-pages.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/admin\/views\/meta-box-sidebar-pages.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/includes\/widget-area.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/includes\/widget-area.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/simple-page-sidebars.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/simple-page-sidebars.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/plugins\/simple-page-sidebars\/uninstall.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/plugins\/simple-page-sidebars\/uninstall.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/wp-content\/plugins\/wordpress-importer\/parsers.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24661,15 +24760,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/css\/datepicker.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/wp-content\/themes\/npp_theme\/css\/global.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/css\/global.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -24988,6 +25078,193 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 179,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_b.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_bl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 213,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_bl.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_bl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_br.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 227,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_br.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_br.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_l.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 148,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_l.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_l.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_r.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 165,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_r.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_r.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_t.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 159,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_t.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_t.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 165,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tl.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tr.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 222,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tr.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/custom_tr.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_b.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 135,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_b.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_b.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_bl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 211,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_bl.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_bl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_br.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 208,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_br.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_br.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_l.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 131,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_l.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_l.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_r.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 132,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_r.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_r.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_t.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 140,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_t.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_t.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 209,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tl.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tr.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 240,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tr.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/datepicker_tr.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/datepicker\/field.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 767,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/field.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/datepicker\/field.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/npp_theme\/img\/detail-img.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -25017,6 +25294,17 @@
 		"initialSize": 27372,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-bg-1.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-bg-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/img-bg-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-bg-2.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-bg-2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25076,6 +25364,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/npp_theme\/img\/img-process-graphic.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-process-graphic.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-process-graphic.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/npp_theme\/img\/img-upcoming.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -25083,6 +25382,17 @@
 		"initialSize": 10152,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-upcoming.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/img-upcoming.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/img\/logo-linkedin.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/logo-linkedin.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/logo-linkedin.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -25109,6 +25419,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/npp_theme\/img\/pointer-arrow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1297,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/pointer-arrow.png",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/img\/pointer-arrow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/npp_theme\/img\/template-img-header.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -25119,6 +25440,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/wp-content\/themes\/npp_theme\/includes\/related_posts_meta_box.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/includes\/related_posts_meta_box.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/wp-content\/themes\/npp_theme\/index.php": {
 		"fileType": 8192,
@@ -25168,6 +25498,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/js\/jquery.hammer.js",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/jquery.hammer-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 2,
+		"syntaxCheckerStyle": 1
+		},
+	"\/wp-content\/themes\/npp_theme\/js\/main-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/js\/main-min.js",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/main-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 2,
@@ -25271,15 +25612,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/searchform.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/wp-content\/themes\/npp_theme\/sidebar.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/wp-content\/themes\/npp_theme\/sidebar.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -26621,6 +26953,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/twentytwelve\/tag.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/wp-content\/uploads\/2014\/11\/basic-page-template.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/wp-content\/uploads\/2014\/11\/basic-page-template.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
