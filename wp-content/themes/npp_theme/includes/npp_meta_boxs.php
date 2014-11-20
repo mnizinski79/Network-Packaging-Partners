@@ -40,7 +40,38 @@ function npp_add_post_meta_boxes() {
     'normal',         // Context
     'default'         // Priority
   );
+
+    //option to show the 'become a partner' option
+  add_meta_box(
+    'npp-become-a-partner',      // Unique ID
+    esc_html__( 'Show Become A Partner Widget', 'example' ),    // Title
+    'npp_become_a_partner_meta_box',   // Callback function
+    'page',         // Admin page (or post type)
+    'normal',         // Context
+    'default'         // Priority
+  );
 }
+
+function npp_become_a_partner_meta_box( $object, $box ) { ?>
+
+  <?php 
+  wp_nonce_field( basename( __FILE__ ), 'npp_become_a_partner_nonce' ); 
+  // wp_nonce_field( basename( __FILE__ ), 'npp_select_categories_nonce' ); 
+
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $npp_become_a_partner = $custom["npp-become-a-partner"][0]; 
+  ?>
+
+  <p>
+    <!--<?php //echo esc_attr( get_post_meta( $object->ID, 'npp-related-posts', true ) ); ?>-->
+    <input type="checkbox" name="npp-become-a-partner" id="npp-become-a-partner" <?php if( $npp_become_a_partner == true ) { ?>checked="checked"<?php } ?> />
+    <label for="npp-become-a-partner">Show Become A Partner Widget</label>
+    <p><i>Please note that the emails from this widget will be sent to the administrator email that you have configured in your Wordpress admin.</i></p>
+    
+  </p>
+
+<?php }
 
 function npp_child_pages_meta_box( $object, $box ) { ?>
 
@@ -116,8 +147,12 @@ function npp_save_show_related_posts_meta( $post_id, $post ) {
   if ( !isset( $_POST['npp_child_pages_nonce'] ) || !wp_verify_nonce( $_POST['npp_child_pages_nonce'], basename( __FILE__ ) ) )
     return $post_id;
 
-  /* Verify the child pages nonce before proceeding. */
+  /* Verify the find positions nonce before proceeding. */
   if ( !isset( $_POST['npp_find_positions_nonce'] ) || !wp_verify_nonce( $_POST['npp_find_positions_nonce'], basename( __FILE__ ) ) )
+    return $post_id;
+
+  /* Verify the become a partner nonce before proceeding. */
+  if ( !isset( $_POST['npp_become_a_partner_nonce'] ) || !wp_verify_nonce( $_POST['npp_become_a_partner_nonce'], basename( __FILE__ ) ) )
     return $post_id;
 
   /* Get the post type object. */
@@ -131,6 +166,7 @@ function npp_save_show_related_posts_meta( $post_id, $post ) {
    processValue('npp-related-posts', $_POST['npp-related-posts'], $post_id);
    processValue('npp-child-pages', $_POST['npp-child-pages'], $post_id);
    processValue('npp-find-positions', $_POST['npp-find-positions'], $post_id);
+   processValue('npp-become-a-partner', $_POST['npp-become-a-partner'], $post_id);
 
 }
 
