@@ -1,4 +1,4 @@
-<form id="primary-search">
+<form id="primary-search" action="<?php bloginfo('url'); ?>/">
 	<fieldset class="icon-ico-magnifing-glass">
         <label>Search Positions</label>
         <input type="text" id="input-primary-search" name="s" placeholder="Search Positions">

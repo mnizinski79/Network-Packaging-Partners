@@ -24,7 +24,7 @@
 
 
                 <!--the stuff after this is what we need to widgetize-->
-                <div class="branding-box" style="background-image:url(img/img-bg-2.jpg);">
+                <div class="branding-box" style="background-image:url(../img/img-bg-2.jpg);">
                     <div class="abs-content">
                         <h2>Our people</h2>
                         <p>
@@ -65,7 +65,7 @@
 
                         <div class="col-6">
                             <figure>
-                                <img src="img/img-process-graphic.png">
+                                <img src="../img/img-process-graphic.png">
                                 <figcaption>Network Packaging Process Chart</figcaption>
                             </figure>
                         </div>
@@ -73,9 +73,23 @@
                 </div>
                 <!--conditionally include related posts slider-->
                 <?php
+                 if( get_post_meta($post->ID, 'npp-find-positions', true )){
+                ?>
+                    <?php echo do_shortcode('[npp-find-positions]'); 
+                }
+                ?>
+                <!--conditionally include related posts slider-->
+                <?php
                  if( get_post_meta($post->ID, 'npp-related-posts', true )){
                 ?>
                     <?php echo do_shortcode('[npp-related-posts-slider]'); 
+                }
+                ?>
+                 <!--conditionally include related posts slider-->
+                <?php
+                 if( get_post_meta($post->ID, 'npp-become-a-partner', true )){
+                ?>
+                    <?php echo do_shortcode('[npp-become-a-partner]'); 
                 }
                 ?>
                 <!--conditionally include child pages widget-->
