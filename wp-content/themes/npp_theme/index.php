@@ -1,5 +1,10 @@
+<?php 
+/*
+ * Template Name: NPP Home Page Template
+ * Description: This should only be used for the home page!
+ */
 
-<?php get_header(); 
+get_header(); 
 
 ?>
 <article>
