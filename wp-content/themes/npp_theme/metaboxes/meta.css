@@ -182,27 +182,45 @@
   color: #0e476f;
 }
 
-#r-rex2-1 {background-image:url('images/wp-interface-icons.png'); background-position:0px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-2 {background-image:url('images/wp-interface-icons.png'); background-position:-147px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-3 {background-image:url('images/wp-interface-icons.png'); background-position:-294px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-4 {background-image:url('images/wp-interface-icons.png'); background-position:-441px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-5 {background-image:url('images/wp-interface-icons.png'); background-position:-588px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-6 {background-image:url('images/wp-interface-icons.png'); background-position:-735px 0px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
+.group-inside table {
+    width: 100%;   
+}
 
-#r-rex2-7 {background-image:url('images/wp-interface-icons.png'); background-position:0px -106px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-8 {background-image:url('images/wp-interface-icons.png'); background-position:-147px -106px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-9 {background-image:url('images/wp-interface-icons.png'); background-position:-294px -106px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-10 {background-image:url('images/wp-interface-icons.png'); background-position:-441px -106px;  width: 148px; height: 106px;
-    background-repeat: no-repeat; text-indent: -9999px;}
-#r-rex2-11 {background-image:url('images/wp-interface-icons.png'); background-position:-588px -106px;  width: 148px; height: 109px;
-    background-repeat: no-repeat; text-indent: -9999px;}
+.group-inside table td {
+    padding-right: 3%;   
+}
+
+.group-inside table td label {
+    padding-top: 71.621622%; 
+    background-size: 600%; 
+    width: 100%; 
+    height: 0;
+    background-repeat: no-repeat; 
+    text-indent: -9999px;
+    overflow: hidden;
+    margin: 10px 0 20px;
+    background-image:url('images/wp-interface-icons.png'); 
+}
+
+#r-rex2-1 {background-position:0px 0px;}
+
+#r-rex2-2 {background-position:20% 0px;}
+
+#r-rex2-3 {background-position:40% 0px;}
+
+#r-rex2-4 {background-position:60% 0px;}
+
+#r-rex2-5 {background-position:80% 0px;}
+
+#r-rex2-6 {background-position:100% 0px;}
+
+#r-rex2-7 {background-position:0px 100%;}
+
+#r-rex2-8 {background-position:20% 100%;}
+
+#r-rex2-9 {background-position:40% 100%;}
+
+#r-rex2-10 {background-position:60% 100%;}
+
+#r-rex2-11 {background-position:80% 100%;} 
 
