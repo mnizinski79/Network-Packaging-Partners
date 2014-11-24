@@ -1,3 +1,4 @@
+<?php global $wpalchemy_media_access; ?>
 <div class="my_meta_control">
  	
 	<p class="warning"><i><?php _e( 'These textareas will NOT work without javascript enabled.' );?></i></p> 
@@ -54,6 +55,34 @@
 			<?php $mb->the_field('cols'); ?>
 			<input type="hidden" class="no-cols" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
 			<div class="npp-user-msg" style="display:none;"></div>
+
+			<div class="npp-branding-box" style="display:none;"><p>Please select an image and enter a target URL for your branding box</p>				
+
+				<?php $mb->the_field('imgurl'); ?>
+				<p>
+					<?php echo $wpalchemy_media_access->getField(array('name'=> $mb->get_the_name(), 'value'=>$mb->get_the_value())); ?>
+					<?php echo $wpalchemy_media_access->getButton(); ?>
+				</p>
+				<?php $wpalchemy_media_access->setGroupName('n' . $mb->get_the_index())->setInsertButtonLabel('Insert'); ?>
+				
+				<?php $mb->the_field('imgtitle'); ?>
+				<span>Enter a Title</span>
+				<input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>				
+
+				<?php $mb->the_field('imgcontent'); ?>
+				<span>Enter the main content</span>
+				<input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>				
+
+				<?php $mb->the_field('imgbtntext'); ?>
+				<span>Enter the text for the button</span>
+				<input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>				
+
+				<?php $mb->the_field('target-url'); ?>
+				<span>Enter a valid target URL</span>
+				<input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/>
+				
+			</div> <!--end branding box-->
+
 			<p class="warning update-warning"><?php _e( 'Sort order has been changed.  Remember to save the post to save these changes.' );?></p>
 	
 			<?php

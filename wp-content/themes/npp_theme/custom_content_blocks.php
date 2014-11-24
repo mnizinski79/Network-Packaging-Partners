@@ -17,8 +17,18 @@
                                     echo do_shortcode('[npp-child-pages]'); 
                                     break;
                                 case '9':  //marketing message
-                                   echo "BRANDING BOX HERE BUT NOT CODED!!!<BR>";
-                                  
+                                   ?>
+                                   <div class="branding-box" style="background-image:url(<?php echo $npp_content_blocks->the_value( 'imgurl' ); ?>);">
+                                        <div class="abs-content">
+                                            <h2><?php echo $npp_content_blocks->the_value( 'imgtitle' ); ?></h2>
+                                            <p>
+                                                <?php echo $npp_content_blocks->the_value( 'imgcontent' ); ?>
+                                            </p>
+                                            <a href="<?php echo $npp_content_blocks->the_value( 'target-url' ); ?>" class="btn primary"><?php echo $npp_content_blocks->the_value( 'imgbtntext' ); ?></a>
+                                        </div>
+                                    </div>
+
+                                   <?php                                  
                                     break;
                                 case '10':  //find jobs listings
                                      echo do_shortcode('[npp-find-positions]'); 

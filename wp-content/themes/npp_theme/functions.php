@@ -4,18 +4,23 @@
 
 /*************WPALCHEMY META BOXES***************************/
 
-if ( ! class_exists( 'WPAlchemy_MetaBox' ) ) include_once 'metaboxes/wpalchemy/MetaBox.php';
+include_once WP_CONTENT_DIR.'/wpalchemy/MetaBox.php';   
+include_once WP_CONTENT_DIR.'/wpalchemy/MediaAccess.php';
+
+
+ $wpalchemy_media_access = new WPAlchemy_MediaAccess();
+
+  $npp_content_blocks = new WPAlchemy_MetaBox(array(
+    'id' => '_npp_custom_content_meta',
+    'title' => 'NPP Custom Content Blocks',
+    'template' => dirname ( __FILE__ ). '/metaboxes/npp-custom-content.php',
+    'init_action' => 'kia_metabox_init', 
+    'save_filter' => 'kia_repeating_save_filter',
+    /*'view' => WPALCHEMY_VIEW_START_CLOSED,*/
+  ));
 
 
 
-$npp_content_blocks = new WPAlchemy_MetaBox(array(
-  'id' => '_npp_custom_content_meta',
-  'title' => 'NPP Custom Content Blocks',
-  'template' => dirname ( __FILE__ ). '/metaboxes/npp-custom-content.php',
-  'init_action' => 'kia_metabox_init', 
-  'save_filter' => 'kia_repeating_save_filter',
-  /*'view' => WPALCHEMY_VIEW_START_CLOSED,*/
-));
 
 /* 
  * Sanitize the input similar to post_content
@@ -229,6 +234,7 @@ function my_admin_print_footer_scripts()
 
          if (className =='r-ex2'){
           $('[name="'+myName+'"]').closest('table').siblings('.no-cols').val(myValue);
+          $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');
            if (myValue<=6){ 
               $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').css('display','none');
               if (myValue == 1){
@@ -252,24 +258,30 @@ function my_admin_print_footer_scripts()
                 $('[name="'+myName+'"]').closest('table').siblings('#customEditor-1').css('display','block');
                 $('[name="'+myName+'"]').closest('table').siblings('#customEditor-2').css('display','block');
                 $('[name="'+myName+'"]').closest('table').siblings('#customEditor-3').css('display','block');
+                $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');
               }
            }else{
                switch (myValue) { 
                 case '7': 
                     $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').html("You have selected to show the 'Related Content' carousel.");
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');                    
                     break;
                 case '8': 
                     $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').html("You have selected to show the 'Child Pages' grid.");
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');
                     break;
                 case '9': 
-                    $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').html("You have selected to show the 'Marketing Message' component.");
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').css('display','none');
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','block');
                     break;      
                 case '10': 
                     $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').html("You have selected to show the 'Find Positions' component.");
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');
                     break;
                 case '11': 
                     $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').html("You have selected to show the 'Become a Partner' component.");
-                   break;
+                    $('[name="'+myName+'"]').closest('table').siblings('.npp-branding-box').css('display','none');
+                    break;
                 default:
                     //alert('Nobody Wins!');
                 }
@@ -277,7 +289,7 @@ function my_admin_print_footer_scripts()
                   $('[name="'+myName+'"]').closest('table').siblings('#customEditor-1').css('display','none');
                   $('[name="'+myName+'"]').closest('table').siblings('#customEditor-2').css('display','none');
                   $('[name="'+myName+'"]').closest('table').siblings('#customEditor-3').css('display','none');
-                $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').css('display','block');
+                  $('[name="'+myName+'"]').closest('table').siblings('.npp-user-msg').css('display','block');
            }
          }else {
           //console.log("something else");
@@ -331,13 +343,14 @@ function my_admin_print_footer_scripts()
                   $(this).next().html("You have selected to show the 'Child Pages' grid.");
                   $(this).next().css('display','block');
                 break;
-            case '9': 
+            case '9':  //branding box
                   $(this).siblings('#customEditor-0').css('display','none');
                   $(this).siblings('#customEditor-1').css('display','none');
                   $(this).siblings('#customEditor-2').css('display','none');
                   $(this).siblings('#customEditor-3').css('display','none');
                   $(this).next().html("You have selected to show the 'Marketing Message' component.");
-                  $(this).next().css('display','block');
+                  $(this).next().css('display','none');
+                  $(this).siblings('.npp-branding-box').css('display','block');
                 break;      
             case '10': 
                   $(this).siblings('#customEditor-0').css('display','none');
