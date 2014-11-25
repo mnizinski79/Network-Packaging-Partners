@@ -1,4 +1,5 @@
-<div class="single_job_listing" itemscope itemtype="http://schema.org/JobPosting">
+<article>
+<div class="class=default-container single_job_listing" itemscope itemtype="http://schema.org/JobPosting">
 	<meta itemprop="title" content="<?php echo esc_attr( $post->post_title ); ?>" />
 
 	<?php if ( $post->post_status == 'expired' ) : ?>
@@ -34,3 +35,4 @@
 
 	<?php endif; ?>
 </div>
+</article>

@@ -20,22 +20,14 @@
                     <?php
                     }
                     ?>
-                    
-                    <?php the_title('<h2 class="hdr-detail">','</h2>'); ?>
-                
-                    <ul class="tag-list">
-                        <li><a href="#">Package</a></li>
-                        <li><a href="#">Network</a></li>
-                        <li><a href="#">Work Place</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                    
                     <?php the_content(); ?>
-                    <?php endwhile; endif; ?>
-                </div>
-                
-                <div class="comments-container">
-                    <p>Comments here if needed</p>
+
+                    <?php
+                    if(get_the_tag_list()) {
+                        echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>');
+                    }
+                    ?>                    
+                <?php endwhile; endif; ?>
                 </div>
                 
             </article>
