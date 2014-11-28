@@ -30,9 +30,5 @@
                     <?php endwhile; endif; ?>
                 </div>
                 
-                <div class="comments-container">
-                    <p>Comments here if needed</p>
-                </div>
-                
             </article>
 <?php get_footer(); ?>

@@ -1,6 +1,6 @@
 <?php
  global $wpdb;
- $querystr = "select DISTINCT meta_value FROM ".$wpdb->postmeta." WHERE meta_key = 'position_city' ORDER BY meta_value ASC";           
+ $querystr = "select DISTINCT meta_value FROM ".$wpdb->postmeta." WHERE meta_key = '_job_location' ORDER BY meta_value ASC";           
  $cities =  $wpdb->get_results($querystr, OBJECT);
 
 ?>     
@@ -9,7 +9,7 @@
                         <div class="col-3 sidebar">
                             <h3>Find a Position</h3>
                             <form id="search-jobs" action="<?php echo get_site_url(); ?>">
-                                <input type="hidden" name="post_type" value="position" />
+                                <input type="hidden" name="post_type" value="job_listing" />
                                 <input type="hidden" name="s" value="" /> 
                                 <fieldset>
                                     <label for="input-search-positions">Jobs interested in</label>
@@ -18,7 +18,7 @@
                                         <?php $recent_posts = wp_get_recent_posts(array(                                                                                                           
                                                         'orderby' => 'post_title',
                                                         'order' => 'ASC',                                                        
-                                                        'post_type' => 'position',
+                                                        'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                             foreach( $recent_posts as $recent ){  
                                                 echo '<option value="'.$recent["post_title"].'">'.$recent["post_title"].'</option>';                                                
