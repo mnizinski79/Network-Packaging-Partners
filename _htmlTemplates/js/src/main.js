@@ -1,5 +1,7 @@
 /* ## parallax #################################################### */    
 
+var _globalSpeed = null;
+
 function initParallax() {
     //duplicate and place an image tag
     var _targetContainer = $(".parallax"); 
@@ -30,7 +32,8 @@ function initParallax() {
     _targetContainer.removeAttr("style");//remove the original
     
     //bind to scroll
-    var _speed = 0.5;
+    //var _speed = 0.5;
+    var _speed = _globalSpeed!==null ? _globalSpeed : 0.5;
     
     function handleScroll(){          
         $(".parallax-image-container").css("top", function(){            
@@ -41,9 +44,123 @@ function initParallax() {
     }
     
     
+    
     $(window).scroll( handleScroll );
     $(window).resize( setParallaxSize );
     
+}
+
+function getBackgroundPos(obj) {
+    var pos = obj.css("background-position");
+    if (pos === 'undefined' || pos === null) {
+        pos = [obj.css("background-position-x"),obj.css("background-position-y")];//i hate IE!!
+    } else {
+        pos = pos.split(" ");
+    }
+    return {
+        x: parseFloat(pos[0]),
+        xUnit: pos[0].replace(/[0-9-.]/g, ""),
+        y: parseFloat(pos[1]),
+        yUnit: pos[1].replace(/[0-9-.]/g, "")
+    };
+}
+
+function initPosMessage() {
+    $(".branding-box").each(function(){
+        var _this = $(this);
+        
+        var _origPos,
+        _winWidth,
+        _winHeight,
+        //_ratio,
+        _contentHeight,
+        _imgHeight,
+        _speed,
+        _distance,
+        _paralax;
+
+        function handleResize(){
+            _origPos = getBackgroundPos(_this).y;
+            _winWidth = $(window).width();
+            _winHeight = $(window).height();
+            //_ratio = 505/1300;
+            _contentHeight = _this.height();
+            _imgHeight = 1.5*_contentHeight;
+            _distance = _imgHeight - _contentHeight;
+            _speed = _distance/_winHeight;
+            _globalSpeed = _speed;
+
+            if(_winWidth > _winHeight){
+                _paralax = true;
+            } else {
+                _paralax = false;
+            }
+            
+            
+        }
+        
+        function handleScroll(){        
+            if(_paralax === true){
+                var _newPos = "center " + -(($(window).scrollTop()*_globalSpeed)) + "px";
+
+                _this.css({
+                    "background-position": _newPos
+                });
+            }
+        }
+        
+        handleScroll();
+        handleResize();
+
+        $(window).scroll( handleScroll );
+        $(window).resize( handleResize );
+        
+    });
+}
+
+function initFooter() {
+    var _origPos,
+    _winWidth,
+    _winHeight,
+    _ratio,
+    _contentHeight,
+    _imgHeight,
+    _speed,
+    _distance,
+    _paralax;
+
+    function handleResize(){
+        _origPos = getBackgroundPos($(".sub-footer")).y;
+        _winWidth = $(window).width();
+        _winHeight = $(window).height();
+        _ratio = 1350/1200;
+        _contentHeight = $("#container").height();
+        _imgHeight = _ratio*_winWidth;
+        _distance = _imgHeight - _winHeight;
+        _speed = _distance/_contentHeight;
+
+        if(_winWidth > _winHeight){
+            _paralax = true;
+        } else {
+            _paralax = false;
+        }
+    }
+
+    function handleScroll(){        
+        if(_paralax === true){
+            var _newPos = "center " + -(($(window).scrollTop()*_speed)) + "px";
+
+            $(".sub-footer").css({
+                "background-position": _newPos
+            });
+        }
+    }
+    
+    handleScroll();
+    handleResize();
+    
+    $(window).scroll( handleScroll );
+    $(window).resize( handleResize );
 }
 
 function initMobileTrigger() {
@@ -384,7 +501,6 @@ function initShareLinks(){
 // jquery is ready
 $(document).ready(function(){
     
-    initParallax();
     initMobileTrigger();
     initCarousel();
     initSearchToggle();
@@ -392,5 +508,9 @@ $(document).ready(function(){
     initDatePicker();
     initFormUpload();
     initShareLinks();
+    
+    initPosMessage();
+    initParallax();
+    initFooter();
     
 });
