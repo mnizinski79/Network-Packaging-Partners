@@ -1,49 +1,45 @@
 /* ## parallax #################################################### */    
 
-function initParallax() {
-    //duplicate and place an image tag
-    var _targetContainer = $(".parallax"); 
-    var _bgImg = _targetContainer.css("background-image");
-    //var _bgURL = _bgImg.substring(_bgImg.indexOf("(")+1,_bgImg.lastIndexOf(")"));
+function initParalax() {
+    var _winHeight;
+    var _speed = 0.5;
     
-    var _parallaxImg = "<div class='parallax-image-container'></div>";
+    var _headerHeight = $("header").css("position") === "fixed" ? $("header").outerHeight() : 0;
     
-    _targetContainer.append(_parallaxImg);
-    
-    function setParallaxSize(){
-        $(".parallax-image-container").css({
-            "width" : _targetContainer.outerWidth(),
-            "height" : _targetContainer.outerHeight(),
-            "backgroundImage" : _bgImg
-        });
-        
-        $(".parallax-image-container").css("top",function(){
-            var _offset = $(this).offset();
+    function setBGPos(){
+        $(".parallax").css("background-position",function(){
+            var _offset = $(this).offset() + _headerHeight;
             var _top = _offset.top;
-            var _style = _top;
+            var _style = "center " + -($(window).scrollTop()-(_top))*_speed + "px";
 
             return _style;
         });
     }
     
-    setParallaxSize();
-    _targetContainer.removeAttr("style");//remove the original
+    //resize events
+    function handleResize() {
+        _winHeight = $(window).height(); 
+        if($(".covers").height() < _winHeight){
+            $(".covers").height(_winHeight*0.8);
+        }
+        
+        setBGPos();
+    }
     
     //bind to scroll
-    var _speed = 0.5;
     
-    function handleScroll(){          
-        $(".parallax-image-container").css("top", function(){            
-            var _newPos = -($(window).scrollTop())*_speed;
+    function handleScroll() {          
+        $(".parallax").css("background-position", function(){            
+            var _offset = $(this).offset();
+            var _top = _offset.top;
+            var _newPos = "center " + -($(window).scrollTop()-(_top))*_speed + "px";
             
             return _newPos;
         });
     }
     
-    
     $(window).scroll( handleScroll );
-    $(window).resize( setParallaxSize );
-    
+    $(window).resize( handleResize ).trigger("resize");   
 }
 
 function initMobileTrigger() {
@@ -384,7 +380,7 @@ function initShareLinks(){
 // jquery is ready
 $(document).ready(function(){
     
-    initParallax();
+    initParalax();
     initMobileTrigger();
     initCarousel();
     initSearchToggle();

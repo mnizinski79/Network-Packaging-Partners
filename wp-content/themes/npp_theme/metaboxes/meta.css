@@ -52,7 +52,7 @@
 }
 .my_meta_control span {
   color: #999;
-  display: block;
+  /*display: block;*/
 }
 .my_meta_control textarea,
 .my_meta_control input[type='text'] {

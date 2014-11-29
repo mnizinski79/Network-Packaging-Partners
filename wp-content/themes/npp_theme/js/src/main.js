@@ -1,45 +1,49 @@
 /* ## parallax #################################################### */    
 
-function initParalax(){
-    var _winHeight;
-    var _speed = 0.5;
+function initParallax() {
+    //duplicate and place an image tag
+    var _targetContainer = $(".parallax"); 
+    var _bgImg = _targetContainer.css("background-image");
+    //var _bgURL = _bgImg.substring(_bgImg.indexOf("(")+1,_bgImg.lastIndexOf(")"));
     
-    var _headerHeight = $("header").css("position") === "fixed" ? $("header").outerHeight() : 0;
+    var _parallaxImg = "<div class='parallax-image-container'></div>";
     
-    function setBGPos(){
-        $(".parallax").css("background-position",function(){
-            var _offset = $(this).offset() + _headerHeight;
+    _targetContainer.append(_parallaxImg);
+    
+    function setParallaxSize(){
+        $(".parallax-image-container").css({
+            "width" : _targetContainer.outerWidth(),
+            "height" : _targetContainer.outerHeight(),
+            "backgroundImage" : _bgImg
+        });
+        
+        $(".parallax-image-container").css("top",function(){
+            var _offset = $(this).offset();
             var _top = _offset.top;
-            var _style = "center " + -($(window).scrollTop()-(_top))*_speed + "px";
+            var _style = _top;
 
             return _style;
         });
     }
     
-    //resize events
-    function handleResize() {
-        _winHeight = $(window).height(); 
-        if($(".covers").height() < _winHeight){
-            $(".covers").height(_winHeight*0.8);
-        }
-        
-        setBGPos();
-    }
+    setParallaxSize();
+    _targetContainer.removeAttr("style");//remove the original
     
     //bind to scroll
+    var _speed = 0.5;
     
     function handleScroll(){          
-        $(".parallax").css("background-position", function(){            
-            var _offset = $(this).offset();
-            var _top = _offset.top;
-            var _newPos = "center " + -($(window).scrollTop()-(_top))*_speed + "px";
+        $(".parallax-image-container").css("top", function(){            
+            var _newPos = -($(window).scrollTop())*_speed;
             
             return _newPos;
         });
     }
     
+    
     $(window).scroll( handleScroll );
-    $(window).resize( handleResize ).trigger("resize");   
+    $(window).resize( setParallaxSize );
+    
 }
 
 function initMobileTrigger() {
@@ -285,7 +289,7 @@ function initPageLeads(){
     $(".page-lead:nth-child(3n+1)").attr("data-orientation","left");
     
     $(".page-lead").hover(function(){
-        $("#page-modal-wrapper").fadeOut(300,function(){
+        $("#page-modal-wrapper").delay(200).fadeOut(300,function(){
             $(this).remove();
         });
         
@@ -301,28 +305,92 @@ function initPageLeads(){
             "opacity":0,
             "display":"block",
             "top": (_offset.top + _this.outerHeight()) - 50
-        }).animate({
+        }).delay(200).animate({
             "top": (_offset.top + _this.outerHeight()) - 30,
             "opacity":1
         },850,'easeOutExpo');
         
     }, function(){
-        $("#page-modal-wrapper").fadeOut(150,function(){
+        $("#page-modal-wrapper").delay(200).fadeOut(150,function(){
             $(this).remove();
         });
         
     });
 }
 
+function initFormUpload() {
+    $(".form-file").each(function(){
+        var _this = $(this);
+
+        //add a new label
+        var _label = $("<label for='" + _this.attr("id") + "'>Select a File (.JPG, .RTF, or .PDF)</label>");
+        _label.insertBefore(_this);
+
+        _label.addClass("form-control");
+
+        //hide form file initial
+        _this.addClass("file-upload-hide");
+        
+        //add a cap image to appear as a button
+        function appendCap(){
+            var _capContent = "<div class='form-upload-cap'></div>'";
+            var _cap = $(_capContent);
+            _cap.appendTo(_label);
+        }
+        
+        appendCap();
+
+        _this.change(function(){
+            _label.text(_this.val().substr(_this.val().lastIndexOf("\\")+1));
+            appendCap();
+        });
+    });
+
+}
+
+// ## Share functions #########################################
+function initShareLinks(){
+    $(".share-box a").click(function(){ 
+        
+        var _shareDir = $(this).attr("data-share");
+        var _softURL = window.location.href;
+        
+        var _fullURL;
+        
+        if(_shareDir === "twitter") {
+            _fullURL = encodeURI("https://twitter.com/intent/tweet?url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "facebook"){
+            _fullURL = encodeURI("http://www.facebook.com/sharer/sharer.php?u=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "linkedin") {
+            _fullURL = encodeURI("http://www.linkedin.com/shareArticle?mini=true&url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } else if(_shareDir === "googleplus") {
+            _fullURL = encodeURI("https://plus.google.com/share?url=" + String(_softURL));
+            openShareWin(_fullURL);
+        } 
+        
+        return false;     
+    });
+    
+    function openShareWin(_shareURL){
+        var config; 
+        window.open(_shareURL,"Share This",config="height=440,width=520,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,directories=no,status=no"); 
+    }
+}
+
 
 // jquery is ready
 $(document).ready(function(){
     
-    initParalax();
+    initParallax();
     initMobileTrigger();
     initCarousel();
     initSearchToggle();
     initPageLeads();
     initDatePicker();
+    initFormUpload();
+    initShareLinks();
     
 });

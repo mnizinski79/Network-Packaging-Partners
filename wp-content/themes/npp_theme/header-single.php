@@ -91,7 +91,7 @@
 
             </header>
             <?php if (have_posts()) : while (have_posts()) : the_post();?>
-<div id="page-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
+            <div id="page-header" class="parallax" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
                 <div class="abs-content">                   
                     <?php the_date( 'M. j, Y', '<p class="breadcrumbs">', '</p>'); ?>
                     <?php the_title('<h1>','</h1>'); ?>

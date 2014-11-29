@@ -91,7 +91,7 @@
 
             </header>
 
-        <div id="page-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
+        <div id="page-header" class="parallax" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
                 <div class="abs-content">     
                 <?php $the_title = single_cat_title( '', false );   ?>           
                     <h1><?php echo ucfirst($the_title); ?> Results</h1>

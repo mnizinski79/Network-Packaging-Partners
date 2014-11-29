@@ -91,7 +91,7 @@
 
             </header>
             
-<div id="page-header" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/img/template-img-header.jpg);">
+<div id="page-header" class="parallax" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/img/template-img-header.jpg);">
                 <div class="abs-content">
                     <p class="breadcrumbs">Oct. 15, 2014</p>
                     <h1>New Package Material</h1>

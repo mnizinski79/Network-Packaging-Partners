@@ -91,7 +91,7 @@
 
             </header>
 
-        <div id="page-header" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
+        <div id="page-header" class="parallax" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/template-img-header.jpg);">
                 <div class="abs-content">                   
                     <h1>Search Results</h1>
                 </div>

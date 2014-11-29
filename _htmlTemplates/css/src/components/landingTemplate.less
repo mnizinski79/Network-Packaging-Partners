@@ -22,6 +22,7 @@
             h3 {
                 border: 0;
                 margin-top: 0;
+                text-align: left;
                 color: @secondary-color;
             }
             
@@ -125,6 +126,27 @@
         }
     }
     
+    ol {//to make it easier in WP to add the arrows
+        color: fade(@primary-grey,80%);
+        margin: 30px 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin: 0 0 10px 0;
+            padding: 0 0 0 25px;
+            list-style: none;
+            position: relative;
+
+            &:before {
+                .arrow-accent;
+                position: absolute;
+                top: 4px;
+                left: 0;
+            }
+        }
+    }
+    
     .sidebar form {
         padding: 0!important;    
     }
@@ -132,6 +154,7 @@
     .intro-container {
         margin: 0;
         padding: @mobile-padding*2 @mobile-padding;
+        background: #fff;
         
             //Fixing Clears Floats
             &:before,
@@ -172,6 +195,7 @@
                 font-size: 1.5em;
                 margin: 30px 0 20px 0;
                 padding: 0;
+                text-align: left;
             }
             
             ul {                

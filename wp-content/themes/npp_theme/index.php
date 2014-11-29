@@ -19,7 +19,7 @@ get_header();
                 
 
                 ?>
-                <div id="home-intro" style="background-image:url(<?php echo $feat_image; ?>);">
+                <div id="home-intro" class="parallax" style="background-image:url(<?php echo $feat_image; ?>);">
                     <div class="abs-content">
                         <h1><?php echo $thumbnail_image[0]->post_title; ?></h1>
                         <?php cc_featured_image_caption(); ?>                       
