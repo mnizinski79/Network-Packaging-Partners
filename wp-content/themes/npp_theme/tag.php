@@ -22,6 +22,9 @@
                                 <strong><?php the_author(); ?></strong>
                             </h4>
                             <div class="list-content">
+                                <?php if ( has_post_thumbnail() ) {
+                                    echo "<p>".the_post_thumbnail('thumbnail')."</p>"; 
+                                } ?>
                                 <h3><?php the_title(); ?></h3>
                                 <p>
                                     <?php echo strip_tags(substr($post->post_content, 0, 200)); ?>...
