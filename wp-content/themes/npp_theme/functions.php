@@ -235,6 +235,33 @@ function npp_widgets_init() {
 add_action( 'widgets_init', 'npp_widgets_init' );
 
 
+// update the '51' to the ID of your form
+add_filter('gform_pre_render_1', 'populate_jobs');
+function populate_jobs($form){
+    
+    foreach($form['fields'] as &$field){
+        if($field['type'] != 'multiselect' || strpos($field['cssClass'], 'populate-posts') === false)
+            continue;
+
+        
+        // you can add additional parameters here to alter the posts that are retreieved
+        // more info: http://codex.wordpress.org/Template_Tags/get_posts
+        $posts = get_posts('numberposts=-1&post_status=publish&post_type=job_listing');
+        
+        // update 'Select a Post' to whatever you'd like the instructive option to be
+        $choices = array(array('text' => 'Jobs Interested In', 'value' => ' '));
+        
+        foreach($posts as $post){
+            $choices[] = array('text' => $post->post_title, 'value' => $post->post_title);
+        }
+        
+        $field['choices'] = $choices;
+        
+    }
+    
+    return $form;
+}
+
 function my_admin_print_footer_scripts()
 {
     ?>
