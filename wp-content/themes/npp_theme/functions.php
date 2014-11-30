@@ -251,7 +251,7 @@ function populate_jobs($form){
         $posts = get_posts('numberposts=-1&post_status=publish&post_type=job_listing');
         
         // update 'Select a Post' to whatever you'd like the instructive option to be
-        $choices = array(array('text' => 'Jobs Interested In', 'value' => ' '));
+        $choices = array(array('text' => 'Job Interested In', 'value' => ' '));
         
         foreach($posts as $post){
             $choices[] = array('text' => $post->post_title, 'value' => $post->post_title);
