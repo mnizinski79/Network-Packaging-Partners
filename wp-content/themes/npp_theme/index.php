@@ -25,53 +25,12 @@ get_header();
                         <?php cc_featured_image_caption(); ?>                       
                     </div>
                 </div>
-                
-                <div id="find-positions">
-                    <div class="col-container">
-                        <form id="form-search-positions">
-                            <input type="hidden" name="post_type" value="position" />
-                            <h2>Find Positions</h2>
-                            <fieldset>
-                                <label for="input-search-positions">Search Positions</label>
-                                <input id="input-search-positions" name="s" type="text">
-                                <button type="submit" value="Search" id="btn-search" class="btn search" name="btn-search"><span>Search</span></button>
-                                <em class="tip-text"><strong>TIP:</strong> Use keywords such as “Package Design”</em>
-                            </fieldset>
-                        </form>
 
-                        <div class="link-box col-container">
-                            <div class="col-6">
-                                <h3>For Candidates</h3>
-                                <ul>
-                                    <li><a href="#">View the jobs</a></li>
-                                    <li><a href="#">Submit your resume</a></li>
-                                    <li><a href="#">Get help &amp; info</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="col-6">
-                                <h3>For Companies</h3>
-                                <ul>
-                                    <li><a href="#">Become a partner</a></li>
-                                    <li><a href="#">Submit a position</a></li>
-                                    <li><a href="#">Fill a position</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
+                <!---DYNAMIC CONTENT BLOCKS---->
+                <?php include('custom_content_blocks.php'); ?> 
+                <!---END DYNAMIC CONTENT BLOCKS---->
                 
                
-                <div id="positioning-message" class="branding-box" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/img-hero-2.jpg);">
-                    <div class="abs-content">
-                        <h2>Our business is built on trust.</h2>
-                        <p>
-                            We create lasting relationships with everyone we work with — client partners and candidates alike.
-                        </p>
-                        <a href="#" class="btn primary">See how we're different</a>
-                    </div>
-                </div>
-
                 
                 
                 <div id="content-feeds">
