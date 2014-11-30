@@ -55,7 +55,7 @@
                                                         'numberposts' => 6,                                                        
                                                         'orderby' => 'post_date',
                                                         'order' => 'DESC',                                                        
-                                                        'post_type' => 'position',
+                                                        'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                     foreach( $recent_posts as $recent ){  
                                         $position_city = get_post_meta($recent["ID"], 'position_city', true );
