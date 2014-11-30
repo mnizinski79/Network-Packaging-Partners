@@ -22,6 +22,7 @@ include_once WP_CONTENT_DIR.'/wpalchemy/MediaAccess.php';
 
 
 
+
 /* 
  * Sanitize the input similar to post_content
  * @param array $meta - all data from metabox
@@ -87,6 +88,7 @@ add_filter( 'meta_content', 'wpautop'            );
 add_filter( 'meta_content', 'shortcode_unautop'  );
 add_filter( 'meta_content', 'prepend_attachment' );
 add_filter( 'meta_content', 'do_shortcode');
+
 
 
 /*************END WPALCHEMY META BOXES***************************/
@@ -240,7 +242,7 @@ add_filter('gform_pre_render_1', 'populate_jobs');
 function populate_jobs($form){
     
     foreach($form['fields'] as &$field){
-        if($field['type'] != 'multiselect' || strpos($field['cssClass'], 'populate-posts') === false)
+        if($field['type'] != 'select' || strpos($field['cssClass'], 'populate-posts') === false)
             continue;
 
         
