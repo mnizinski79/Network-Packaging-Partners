@@ -58,13 +58,13 @@
                                                         'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                     foreach( $recent_posts as $recent ){  
-                                        $position_city = get_post_meta($recent["ID"], 'position_city', true );
+                                        $position_city = get_post_meta($recent["ID"], '_job_location', true );
                                         $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
                                         echo '<li class="col-6">';
                                         echo '<a href="'.get_permalink($recent["ID"]).'">';
                                         echo '<h4 class="position-location">';
                                         if ($position_city !='' ){echo $position_city; }
-                                        if (($position_city !='') && ($position_zipcode!='')) {echo ':';}
+                                        if (($position_city !='') && ($position_zipcode!='')) {echo ' : ';}
                                         if ($position_zipcode!=''){echo  '<strong>'.$position_zipcode.'</strong>';}
                                         if (($position_city =='') && ($position_zipcode=='')) {echo '&nbsp;';}
                                         echo '</h4>';

@@ -83,16 +83,29 @@ get_header();
                                                         'numberposts' => 3,                                                        
                                                         'orderby' => 'post_date',
                                                         'order' => 'DESC',                                                        
-                                                        'post_type' => 'position',
+                                                        'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                     foreach( $recent_posts as $recent ){  
                                         //var_dump($recent); die();
-                                        $position_city = get_post_meta($recent["ID"], 'position_city', true );
+                                        $position_city = get_post_meta($recent["ID"], '_job_location', true );
                                         $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
                                         echo '<li>';
                                         echo '<a href="'.get_permalink($recent["ID"]).'">';
-                                        echo '<h4 class="position-location">'.$position_city.': <strong>'.$position_zipcode.'</strong></h4>';
-                                        echo '<h3>'.$recent["post_title"].'</h3>';
+                                        if ($position_city){
+                                            echo '<h4 class="position-location">'.$position_city;
+                                        }
+                                        if ($position_zipcode){
+                                            if ($position_city){
+                                                echo ': <strong>'.$position_zipcode.'</strong></h4>';
+                                            }else {
+                                                '<h4><strong>'.$position_zipcode.'</strong></h4>';
+                                            }
+                                        }else {
+                                            if ($position_city){
+                                                echo '</h4>';
+                                            }
+                                        }
+                                         echo '<h3>'.$recent["post_title"].'</h3>';
                                         echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
                                         echo '</a>';
                                         echo '</li>';
