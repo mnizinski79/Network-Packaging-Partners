@@ -555,7 +555,22 @@
                 li {
 
                     a {
-
+                        
+                        h2 {
+                            display: inline;
+                            color: fade(@primary-grey,90%);
+                            margin: 0;
+                            padding: 0;
+                            font-size: .85em;
+                            float: left;
+                            line-height: 1.5em;
+                            
+                            &:after {
+                                content: ".\00a0";
+                                display: inline-block;
+                            }
+                        }
+                        
                         h3 {
                             margin: 0;
                             padding: 0px 0 5px;

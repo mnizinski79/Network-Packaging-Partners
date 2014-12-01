@@ -222,7 +222,21 @@
                         margin: 0 0 30px 0;
                         padding: 0;
                         position: relative;
-
+                        
+                        h2 {
+                            display: inline;
+                            color: fade(@primary-grey,90%);
+                            margin: 0;
+                            padding: 0;
+                            font-size: .85em;
+                            float: left;
+                            
+                            &:after {
+                                content: ".\00a0";
+                                display: inline-block;
+                            }
+                        }
+                        
                         h3 {
                             border: 0;
                             margin: 0;
