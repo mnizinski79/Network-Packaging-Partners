@@ -1,0 +1,82 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+@media @small {
+    .single_job_listing {
+        ul.meta {
+            list-style: none;
+            padding: 0 0 1.5em;
+            margin: 0 0 1.5em;
+            overflow: hidden;
+            zoom: 1;
+            clear: both;
+            border-bottom: 1px solid fade(@primary-grey,10%);
+            
+            li {
+                color: @primary-grey!important; 
+                background: none!important;
+                list-style: none;
+                
+                &.date-posted {
+                    display: none;   
+                }
+            }
+        }
+        
+        div.company {
+            position: relative;
+            border: 1px solid fade(@primary-grey,10%);
+            border-width: 1px 0;
+            padding: 1em;
+            margin: 0 0 2em;
+            display: block;
+            clear: both;
+            min-height: auto;
+            box-shadow: initial;
+            
+            display: none;
+            
+            img {
+                width: 3em;
+                height: auto;
+            }
+            
+            .tagline {
+                margin: 0 0 0 3em;   
+            }
+            
+            .name {
+                a {
+                    float: none;
+                    margin-left: 0;
+                }
+            }
+        }
+        
+        div.application {
+            padding: 0;
+            margin: 3em 0 1em;
+            overflow: hidden;
+            
+            .apply-with-linkedin {
+                width: 48%;
+            }
+            
+            .application_button {
+                width: 48%;
+            }
+        }
+    }
+}
+
+@media @medium {
+    
+}
+
+@media @large {
+    
+}
+
+@media @extra-large {
+    
+}

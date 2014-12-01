@@ -49,7 +49,7 @@
         }
     }
     
-    #find-positions {
+    #find-positions, #home-intro + .secondary-content {
         padding: @mobile-padding;
         margin: 0;
         background: #fff;
@@ -443,15 +443,19 @@
         }
     }
     
-    #find-positions {
+    #find-positions, #home-intro + .secondary-content {
         .col-container {
             width: 105%;    
         }
         
+        .col-6 {
+            padding-bottom: 0;    
+        }
+        
         form {
-            width: 45%;
+            width: 100%;
             float: left;
-            padding: 0 5% 0 0;
+            padding: 0 10% 0 0;
             
             background: url(../img/fade-divider.png) 100% 50% no-repeat;
             background-size: contain;
@@ -475,6 +479,12 @@
         h3 {
             line-height: 1.5em;
             padding-top: 15px;
+            border-bottom: none;
+            text-transform: none;
+        }
+        
+        ol {
+            margin-top: 15px;   
         }
         
         .link-box {
@@ -561,7 +571,7 @@
         
     }
     
-    #find-positions { 
+    #find-positions, #home-intro + .secondary-content { 
         padding: @mobile-padding/2 @base-margin;
         
         h3 {
@@ -663,11 +673,11 @@
         }
     }
     
-    #positioning-message {
+    #positioning-message { 
         
     }
     
-    #find-positions { 
+    #find-positions, #home-intro + .secondary-content { 
         padding: @mobile-padding @base-margin*1.5;
     }
     

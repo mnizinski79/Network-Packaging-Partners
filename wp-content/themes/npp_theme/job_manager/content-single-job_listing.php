@@ -1,6 +1,4 @@
-<article>
 
-<div class="intro-container">
     <div class="col-container">
         <div class="main-content col-8 class=default-container single_job_listing" itemscope itemtype="http://schema.org/JobPosting">
         	<meta itemprop="title" content="<?php echo esc_attr( $post->post_title ); ?>" />
@@ -41,6 +39,3 @@
             <?php dynamic_sidebar('Jobs Sidebar'); ?>
         </aside>
     </div>
-</div>
-
-</article>
