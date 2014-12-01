@@ -36,8 +36,11 @@
 			<?php endif; ?>
 		</dl>
 		<p class="apply-with-linkedin-submit">
-			<input type="submit" name="apply-with-linkedin-submit" value="<?php _e( 'Submit Application', 'wp-job-manager-apply-with-linkedin' ); ?>" /> <?php printf( __( 'Clicking submit will submit your full profile to %s.', 'wp-job-manager-apply-with-linkedin' ), '<strong>' . esc_html( $company_name ) . '</strong>' ); ?>
-			<input type="hidden" name="apply-with-linkedin-profile-data" id="apply-with-linkedin-profile-data" />
+			<input type="submit" name="apply-with-linkedin-submit" value="<?php _e( 'Submit Application', 'wp-job-manager-apply-with-linkedin' ); ?>" /> 
+            
+            <?php //printf( __( 'Clicking submit will submit your full profile to %s.', 'wp-job-manager-apply-with-linkedin' ), '<strong>' . esc_html( $company_name ) . '</strong>' ); ?>
+			
+            <input type="hidden" name="apply-with-linkedin-profile-data" id="apply-with-linkedin-profile-data" />
 			<input type="hidden" name="apply-with-linkedin-job-id" value="<?php echo esc_attr( $job_id ); ?>" />
 		</p>
 	</div>
