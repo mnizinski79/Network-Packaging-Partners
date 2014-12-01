@@ -17,14 +17,18 @@
                     <?php while (have_posts()) : the_post(); ?>
                         <li>
                         <a href="<?php the_permalink(); ?>">
-                            <h4 class="position-location">                               
+                            <h4 class="position-location"> 
+                                <div class="img-container">
+                                    <?php if ( has_post_thumbnail() ) {
+                                      echo the_post_thumbnail('thumbnail'); 
+                                    } ?>
+                                </div>
+                                
                                 <?php echo get_the_date(); ?><br>
                                 <strong><?php the_author(); ?></strong>
                             </h4>
+                            
                             <div class="list-content">
-                               <?php if ( has_post_thumbnail() ) {
-                                      echo "<p>".the_post_thumbnail('thumbnail')."</p>"; 
-                                } ?>
                                 <h3><?php the_title(); ?></h3>
                                 <p>
                                     <?php echo strip_tags(substr($post->post_content, 0, 200)); ?>...
