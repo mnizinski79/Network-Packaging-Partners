@@ -9,6 +9,8 @@
 ?>
 <?php do_action( 'single_job_listing_meta_before' ); ?>
 
+<?php if ( $companyName = get_the_company_name() ) : ?>
+
 <ul class="meta">
 	<?php do_action( 'single_job_listing_meta_start' ); ?>
     
@@ -31,5 +33,7 @@
 
 	<?php do_action( 'single_job_listing_meta_end' ); ?>
 </ul>
+
+<?php endif; ?>
 
 <?php do_action( 'single_job_listing_meta_after' ); ?>
