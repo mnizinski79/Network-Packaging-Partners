@@ -352,9 +352,13 @@ function initSearchToggle() {
             
         } else {
             $("body").toggleClass("search-open");
+            
+            if($("body").hasClass("search-open")){
+                $("#primary-search input:first").focus();
+            } else {
+                $("#primary-search input:first").blur();
+            }
         }
-        
-        $("#primary-search input:first").focus();
         
         if($(window).outerWidth() < 980){
             $(document).click(function() {
