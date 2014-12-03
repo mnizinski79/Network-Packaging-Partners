@@ -95,7 +95,7 @@ get_header();
                                         }
                                         echo '<h3>'.$recent['post_title'].'</h3>';
                                         $event_date = get_post_meta($recent["ID"], 'event_date', true );
-                                        echo '<p>'.$event_date.'</p>';
+                                        echo '<p>'.$recent['post_excerpt'].'</p>';
                                         echo '</a>';
                                         echo '</li>';
                                     }
@@ -129,7 +129,8 @@ get_header();
                                         echo '<div class="news-excerpt">';
                                         echo '<h4 class="position-location">'.date('M. d, Y',strtotime($recent['post_date'])).'</h4>';  //the_date('Y-m-d', '<h4 class="position-location">', '</h4>');
                                         echo '<h3>'.$recent["post_title"].'</h3>';
-                                        echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                        //echo '<p>'.wp_strip_all_tags(substr($recent["post_content"], 0,50)).' ...</p>';
+                                        echo '<p>'.$recent["post_excerpt"].' ...</p>';
                                         echo '</div>';
                                         echo '</a>';
                                         echo '</li>';
