@@ -35,7 +35,8 @@ jQuery( function( $ ) {
 
 			if ( profile.threeCurrentPositions._total > 0 ) {
 				jQuery( profile.threeCurrentPositions.values ).each( function( index ) {
-					$profile.find('dd.profile-current-positions ul').append( '<li>' + profile.threeCurrentPositions.values[ index ].title + " - " + profile.threeCurrentPositions.values[ index ].company.name + '</li>' );
+                    var _summary = profile.threeCurrentPositions.values[ index ].summary ? "<p class='smaller'>" + profile.threeCurrentPositions.values[ index ].summary + "</p>" : "";
+					$profile.find('dd.profile-current-positions ul').append( '<li>' + profile.threeCurrentPositions.values[ index ].title + " - " + profile.threeCurrentPositions.values[ index ].company.name + _summary + '</li>' );
 				});
 			} else {
 				$profile.find('.profile-current-positions').hide();
@@ -43,7 +44,8 @@ jQuery( function( $ ) {
 
 			if ( profile.threePastPositions._total > 0 ) {
 				jQuery( profile.threePastPositions.values ).each( function( index ) {
-					$profile.find('dd.profile-past-positions ul').append( '<li>' + profile.threePastPositions.values[ index ].title + " - " + profile.threePastPositions.values[ index ].company.name + '</li>' );
+					var _summary = profile.threePastPositions.values[ index ].summary ? "<p class='smaller'>" + profile.threePastPositions.values[ index ].summary + "</p>" : "";
+					$profile.find('dd.profile-past-positions ul').append( '<li>' + profile.threePastPositions.values[ index ].title + " - " + profile.threePastPositions.values[ index ].company.name + _summary + '</li>' );
 				});
 			} else {
 				$profile.find('.profile-past-positions').hide();
