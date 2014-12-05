@@ -36,7 +36,7 @@ get_header();
                 <div id="content-feeds">
                     <div class="col-container">
                         <div class="container-feed-positions col-4">
-                            <h3>Positions <a href="#" class="btn primary">View all</a></h3>
+                            <h3>Positions <a href="/?s=&post_type=job_listing" class="btn primary">View all</a></h3>
                             <ul>
                                 <?php $recent_posts = wp_get_recent_posts(array(
                                                         'numberposts' => 3,                                                        
@@ -75,7 +75,7 @@ get_header();
                         
                 
                         <div class="container-feed-events col-4">
-                            <h3>Upcoming <a href="#" class="btn primary">View all</a></h3>
+                            <h3>Upcoming</h3>
                             
                             <ul>
                                  <?php $recent_posts = wp_get_recent_posts(array(
@@ -105,7 +105,7 @@ get_header();
                         </div>
                         
                         <div class="container-feed-news col-4">
-                            <h3>News <a href="#" class="btn primary">View all</a></h3>
+                            <h3>News <a href="/category/news/" class="btn primary">View all</a></h3>
                             
                             <ul>
                                 <?php

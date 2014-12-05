@@ -202,10 +202,10 @@ function initCarousel() {
                 
             } else {//medium, large and ex-large
                 _itemPadding = _wrapperWidth * 0.02;
-                _itemWidth = _wrapperWidth/3 + _itemPadding/3;
+                _itemWidth = _wrapperWidth/4 + _itemPadding/4;
                 _carouselWidth = _itemWidth * _itemCount;
                 
-                _itemsPerPage = 3;
+                _itemsPerPage = 4;
             }
             
             _pageCount = Math.ceil(_itemCount/_itemsPerPage);
