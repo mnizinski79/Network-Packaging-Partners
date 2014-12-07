@@ -48,13 +48,18 @@ $args = array(
     <div class="intro-container"> 
         <div class="col-container">
             <div class="main-content col-8">
+                <!--
                 <form id="form-primary-search-results" action="<?php bloginfo('url'); ?>/">
                     <fieldset class="icon-ico-magnifing-glass">
-                        <label>Search Results</label>
+                       
+                        <label>All Jobs</label>
                         <input type="text" name="s" id="input-search-results" value="<?php echo $s." ".($_REQUEST['position-name']!='null' ? $_REQUEST['position-name'] : '')." ".($_REQUEST['position-location']!='null' ? $_REQUEST['position-location'] : ''); ?>">
+                        
                         <input type="hidden" name="post_type" value="position" /> 
                      </fieldset>
                 </form>
+                -->
+                
                 <div class="results-list">
                     <ul>     
 

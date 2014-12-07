@@ -1,8 +1,8 @@
 <footer>
                 <div class="sub-footer" style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/img/img-bg-1.jpg);">
                     <a href="/contact-us/">
-                        <strong>Got an Emergency?</strong>
-                        <span>We can help</span>
+                        <strong>Got an emergency?</strong>
+                        <span>We can help.</span>
                     </a>
                 </div>
                 

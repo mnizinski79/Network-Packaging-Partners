@@ -4,7 +4,11 @@
 	<div class="job_application application">
 		<?php do_action( 'job_application_start', $apply ); ?>
 		
+        <?php if ( $website = get_the_company_website() ) : ?>
 		<input type="button" class="application_button button" value="<?php _e( 'Apply for job', 'wp-job-manager' ); ?>" />
+        <?php else : ?>
+        <input type="button" class="application_button button" value="<?php _e( 'Upload your resume', 'wp-job-manager' ); ?>" />
+        <?php endif; ?>
 		
 		<div class="application_details">
 			<?php
