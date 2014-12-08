@@ -1,9 +1,9 @@
    
 <div class="secondary-content">
                     <div class="col-container">
-                        <h2>Become a partner</h2>
+                        <h2>Join us today</h2>
                         <p>
-                            Schedule an appointment below and we'll call you when it works with your schedule. 
+                            Tell us a little bit about you, and we'll get in touch about becoming a member of Network Packaging Partners. We look forward to working with you. 
                         </p>
                         <div id="note" style="display:none;">Thank you for contacting us. We will be in touch soon!</div>
                         <form id="npp-become-a-partner" method="post">

@@ -20,9 +20,10 @@ function initParallax() {
         });
         
         $(".parallax-image-container").css("top",function(){
+            var _headerOffset = $("header").css("position") === "relative" ? $("header").outerHeight() : 0;
             var _offset = $(this).offset();
             var _top = _offset.top;
-            var _style = _top;
+            var _style = _top + _headerOffset;
 
             return _style;
         });
@@ -35,9 +36,11 @@ function initParallax() {
     //var _speed = 0.5;
     var _speed = _globalSpeed!==null ? _globalSpeed : 0.5;
     
-    function handleScroll(){          
+    function handleScroll(){   
+        var _headerOffset = $("header").css("position") === "relative" ? $("header").outerHeight() : 0;
+        
         $(".parallax-image-container").css("top", function(){            
-            var _newPos = -($(window).scrollTop())*_speed;
+            var _newPos = (-($(window).scrollTop())*_speed) + _headerOffset;
             
             return _newPos;
         });
@@ -516,5 +519,7 @@ $(document).ready(function(){
     initPosMessage();
     initParallax();
     initFooter();
+    
+    $(".secondary-content select").chosen();
     
 });

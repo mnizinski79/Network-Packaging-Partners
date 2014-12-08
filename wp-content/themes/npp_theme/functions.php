@@ -165,6 +165,7 @@ function npp_load_javascript_files() {
   wp_register_script( 'npp-datepicker', get_template_directory_uri() . '/js/datepicker.js', array('jquery'));
   wp_register_script( 'npp-easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array('jquery'));
   wp_register_script( 'npp-hammer', get_template_directory_uri() . '/js/jquery.hammer.js', array('jquery'));
+  wp_register_script( 'npp-chosen', get_template_directory_uri() . '/js/chosen.jquery.js', array('jquery'));
     
   wp_register_script( 'npp-main', get_template_directory_uri() . '/js/src/main.js', array('jquery'));
     
@@ -172,6 +173,7 @@ function npp_load_javascript_files() {
   wp_enqueue_script('npp-datepicker');
   wp_enqueue_script('npp-easing');
   wp_enqueue_script('npp-hammer');
+  wp_enqueue_script('npp-chosen');
   wp_enqueue_script('npp-main');
  
 }

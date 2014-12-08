@@ -4,7 +4,7 @@
  $cities =  $wpdb->get_results($querystr, OBJECT);
 
 ?>     
-<div class="secondary-content col-container">
+<div class="secondary-content">
                     <div class="col-container">
                         <div class="col-3 sidebar">
                             <h3>Find a Position</h3>
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="col-8">
-                            <h3>Recent Position <a href="#" class="btn primary">View all</a></h3>
+                            <h3>Recent Positions <a href="/?s=&post_type=job_listing" class="btn primary">View all</a></h3>
 
                             <div class="container-feed-positions">
                                 <ul class="col-container">

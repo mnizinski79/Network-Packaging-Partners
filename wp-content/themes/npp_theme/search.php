@@ -72,7 +72,7 @@ $args = array(
                         <a href="<?php the_permalink(); ?>">
                             <h4 class="position-location">
                                 <strong>Location</strong><br>
-                                <?php echo $position_city; ?>: 
+                                <?php echo $position_city; ?> 
                                 <strong><?php echo $position_zipcode; ?></strong>
                             </h4>
                             <div class="list-content">

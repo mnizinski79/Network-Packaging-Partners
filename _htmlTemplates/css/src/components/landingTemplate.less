@@ -345,15 +345,17 @@
                     margin: 0;
                     padding: 0;
                     list-style: none; 
+                    min-height: 135px;
                     
                     &.col-6 {
-                        padding-bottom: 0;    
+                        padding-bottom: 0;
+                        padding: 0 5% 0 0;
                     }
 
                     a {
                         display: block;
                         margin: 0 0 30px 0;
-                        padding: 0;
+                        padding: 0 35px 0 0;
                         position: relative;
 
                         h3 {
@@ -546,7 +548,7 @@
         }
         
         &.col-container {
-            width: 105%;
+            //width: 105%;
             
             .col-6 {
                 width: 50%;
@@ -649,6 +651,10 @@
     .secondary-content {
         margin: 0;
         padding: @mobile-padding*2 @base-margin;
+        
+        &.col-container {
+            width: 105%;
+        }
     }
 }
 
