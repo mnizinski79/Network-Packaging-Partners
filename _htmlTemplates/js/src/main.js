@@ -422,6 +422,14 @@ function initPageLeads(){
         var _desc = _this.attr("data-content");
         var _offset = _this.offset();
         var _orientation = _this.attr("data-orientation");
+        //var _itemOffset = _this.offset();
+        var _img = _this.find("img");
+        var _src = _img.attr("src");
+        var _hoverSrc = _src.substring(0,_src.lastIndexOf("."));
+        var _fileExt =  _src.substring(_src.lastIndexOf("."));
+        
+        //console.log(_fileExt);
+        _img.attr("src",_hoverSrc + "-hover" + _fileExt);
         
         var _modalContent = "<div id='page-info-modal' class='" + _orientation + "'><h3>" + _title + "</h3><p>" + _desc + "</p></div>";
         
@@ -434,7 +442,49 @@ function initPageLeads(){
             "opacity":1
         },850,'easeOutExpo');
         
+        
+        function isElementInViewport (el) {
+
+            //special bonus for those using jQuery
+            if (typeof jQuery === "function" && el instanceof jQuery) {
+                el = el[0];
+            }
+
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+            );
+        }
+        
+        var _el = $("#page-info-modal");
+
+        if ( !isElementInViewport(_el) ) {
+            if (typeof jQuery === "function" && _el instanceof jQuery) {
+                _el = _el[0];
+            }
+            
+            var rect = _el.getBoundingClientRect();
+            
+           $("htm,body").animate({
+                scrollTop: $(window).scrollTop() + Math.abs(rect.bottom - $(window).innerHeight()) + 40
+            }, 550);
+            
+            //console.log($(window).innerHeight);
+        }
+        
     }, function(){
+        var _this = $(this);
+        var _img = _this.find("img");
+        var _src = _img.attr("src");
+        var _origSrc = _src.replace("-hover","");
+        
+        //console.log(_fileExt);
+        _img.attr("src",_origSrc);
+        
         $("#page-modal-wrapper").delay(200).fadeOut(150,function(){
             $(this).remove();
         });

@@ -24,6 +24,10 @@
 						echo ' - ' . $position->company->name;
 					}
 					echo '</br>';
+                    if ( ! empty( $position->summary ) ) {
+						echo $position->summary;
+					}
+                    echo '</br>';
 				}
 			}
 		?></td>
@@ -38,6 +42,11 @@
 						echo ' - ' . $position->company->name;
 					}
 					echo '</br>';
+                    if ( ! empty( $position->summary ) ) {
+						echo $position->summary;
+                        echo '</br>';
+					}
+                    echo '</br>';
 				}
 			}
 		?></td>
