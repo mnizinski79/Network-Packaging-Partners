@@ -54,8 +54,7 @@ $args = array(
                        
                         <label>All Jobs</label>
                         <input type="text" name="s" id="input-search-results" value="<?php echo $s." ".($_REQUEST['position-name']!='null' ? $_REQUEST['position-name'] : '')." ".($_REQUEST['position-location']!='null' ? $_REQUEST['position-location'] : ''); ?>">
-                        
-                        <input type="hidden" name="post_type" value="position" /> 
+
                      </fieldset>
                 </form>
                 -->

@@ -33,9 +33,8 @@ if ($results){
                $my_content .= '<img src="img/img-upcoming.jpg">';
           }
           $my_content .='<h3>'.$result->post_title.'</h3>
-                  <!-- p>'.date('M. d, Y',strtotime($result->post_date)).'</p -->
-                       <p>'.$result->post_excerpt.'</p>
-              </a></li>';  
+
+                       <p>'.$result->post_excerpt.'</p></a></li>';  
         }
               
 
