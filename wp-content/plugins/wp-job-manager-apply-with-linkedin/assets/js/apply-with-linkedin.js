@@ -22,7 +22,7 @@ jQuery( function( $ ) {
 			$profile.find('.profile-name').html( profile.formattedName );
 			$profile.find('.profile-headline').html( profile.headline );
 			$profile.find('.profile-location').html( profile.location.name );
-			$profile.find('dd.profile-email').html( profile.emailAddress );
+			$profile.find('dd.profile-email ul').html( '<li>' + profile.emailAddress + '</li>');
 			jQuery('textarea#apply-with-linkedin-cover-letter').append( profile.formattedName );
 			jQuery('#apply-with-linkedin-profile-data').val( JSON.stringify( profile, null, '' ) );
 			
