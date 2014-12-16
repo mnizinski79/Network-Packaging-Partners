@@ -64,19 +64,23 @@
                                     foreach( $recent_posts as $recent ){  
                                         $position_city = get_post_meta($recent["ID"], '_job_location', true );
                                         $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
-                                        echo '<li class="col-6">';
-                                        echo '<a href="'.get_permalink($recent["ID"]).'">';
-                                        echo '<h4 class="position-location">';
-                                        if ($position_city !='' ){echo $position_city; }
-                                        if (($position_city !='') && ($position_zipcode!='')) {echo ' : ';}
-                                        if ($position_zipcode!=''){echo  '<strong>'.$position_zipcode.'</strong>';}
-                                        if (($position_city =='') && ($position_zipcode=='')) {echo '&nbsp;';}
-                                        echo '</h4>';
-                                       
-                                        echo '<h3>'.$recent["post_title"].'</h3>';
-                                        echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
-                                        echo '</a>';
-                                        echo '</li>';
+                                        $position_company = get_the_company_name($recent["ID"]);
+                                        
+                                        if($position_company != ""){
+                                            echo '<li class="col-6">';
+                                            echo '<a href="'.get_permalink($recent["ID"]).'">';
+                                            echo '<h4 class="position-location">';
+                                            if ($position_city !='' ){echo $position_city; }
+                                            if (($position_city !='') && ($position_zipcode!='')) {echo ' : ';}
+                                            if ($position_zipcode!=''){echo  '<strong>'.$position_zipcode.'</strong>';}
+                                            if (($position_city =='') && ($position_zipcode=='')) {echo '&nbsp;';}
+                                            echo '</h4>';
+
+                                            echo '<h3>'.$recent["post_title"].'</h3>';
+                                            echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                            echo '</a>';
+                                            echo '</li>';
+                                        }
                                     }
                                 ?>   
                                    

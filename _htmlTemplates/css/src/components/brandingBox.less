@@ -7,9 +7,9 @@
         margin: 0;
         padding: @mobile-padding*2 @mobile-padding;
         //background-size: cover;
-        background: 105%;
-        //background-position: center center;
-        background-position: center 0;
+        background-size: 380%;
+        //background-position: 40% center;
+        background-position: 40% center;
         text-align: center;
         position: relative;
         
@@ -55,6 +55,8 @@
 @media @medium {
     .branding-box {
         text-align: left;
+        background-size: 150%;
+        background-position: center 0;
         
         .abs-content {
             margin-left: 50%;    
@@ -95,6 +97,7 @@
 @media @large {
     .branding-box {
         padding: @mobile-padding*4 @base-margin;
+        background-size: 150%;
         
         p {
             line-height: 1.5em;
@@ -106,5 +109,6 @@
 @media @extra-large {
     .branding-box {
         padding: @mobile-padding*4 @base-margin*1.5;
+        background-size: 130%;
     }
 }
