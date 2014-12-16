@@ -63,7 +63,7 @@ $args = array(
 
                     <?php if ( have_posts() && !$custom_query) : $has_results=true; ?>
                     <?php while (have_posts()) : the_post(); 
-                        //if (get_the_title($post->ID)==''){continue;}
+                        if (get_the_title($post->ID)==''){continue;}
                          $position_city = get_post_meta($post->ID, '_job_location', true );
                          $position_zipcode = get_post_meta($post->ID, 'position_zipcode', true );
                     ?>
