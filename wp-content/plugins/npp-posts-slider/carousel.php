@@ -19,7 +19,11 @@ if ($results){
 
      $count = 0;
      $my_content .= '<div class="secondary-content">
-                    <div class="col-container"><ul class="carousel">'; 
+                    <div class="col-container">';
+      if ($custom_title!=''){
+           $my_content .= '<h2 class="module-header">'.$custom_title.'</h2>';
+        } 
+      $my_content .= '<ul class="carousel">'; 
     foreach ($results as $result) {
         if (($result->ID != $my_id) && ($result->post_type=='post')){
           

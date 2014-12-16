@@ -11,11 +11,10 @@ if (isset($_REQUEST['position-name']) && $_REQUEST['position-name']!='null'){
     $custom_query=true;
     
 }
-if (isset($_REQUEST['position-location']) && $_REQUEST['position-location']!=null && $_REQUEST['position-location']!='null'){  
-  
+if (isset($_REQUEST['position-location']) && $_REQUEST['position-location']!=null && $_REQUEST['position-location']!='null'){   
     if (isset($_REQUEST['position-name']) && $_REQUEST['position-name']!='null'){
        $positions = getPostsByLocationAndTitle($_REQUEST['position-location'],$_REQUEST['position-name']);
-    }else {
+    }else {        
         $positions = getPostsByLocation($_REQUEST['position-location']);
     }
     $custom_query = true;
@@ -64,6 +63,7 @@ $args = array(
 
                     <?php if ( have_posts() && !$custom_query) : $has_results=true; ?>
                     <?php while (have_posts()) : the_post(); 
+                        //if (get_the_title($post->ID)==''){continue;}
                          $position_city = get_post_meta($post->ID, '_job_location', true );
                          $position_zipcode = get_post_meta($post->ID, 'position_zipcode', true );
                     ?>

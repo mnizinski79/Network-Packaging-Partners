@@ -5,6 +5,10 @@
 
 ?>     
 <div class="secondary-content">
+    <?php if ($custom_title!=''){
+            echo '<h2 class="module-header">'.$custom_title.'</h2>';
+        }   
+    ?>
                     <div class="col-container">
                         <div class="col-3 sidebar">
                             <h3>Find a Position</h3>

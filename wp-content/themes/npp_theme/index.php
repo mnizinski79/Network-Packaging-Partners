@@ -45,7 +45,7 @@ get_header();
                                                         'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                     foreach( $recent_posts as $recent ){  
-                                        //var_dump($recent); die();
+                                        if ($recent["post_title"]==''){continue;}
                                         $position_city = get_post_meta($recent["ID"], '_job_location', true );
                                         $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
                                         echo '<li>';

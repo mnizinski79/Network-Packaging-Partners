@@ -11,15 +11,23 @@ Author URI: http://www.amylashley.net
 //tell wordpress to register the demolistposts shortcode
 add_shortcode("npp-find-positions", "npp_findpositions_handler");
 
-function npp_findpositions_handler() {
+function npp_findpositions_handler($atts) {
   //run function that actually does the work of the plugin
-  $my_output = npp_findpositions_function();
+  $my_output = npp_findpositions_function($atts);
   //send back text to replace shortcode in post
+
   return $my_output;
 }
 
-function npp_findpositions_function() {
+function npp_findpositions_function($atts) {
   //process plugin
+ extract( shortcode_atts( array(    
+        'custom_title' => '',
+  ), $atts) );
+
+
+
+
   include('template.php');
   //send back text to calling function
   return $my_content;

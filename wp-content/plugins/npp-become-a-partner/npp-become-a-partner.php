@@ -11,15 +11,19 @@ Author URI: http://www.amylashley.net
 //tell wordpress to register the demolistposts shortcode
 add_shortcode("npp-become-a-partner", "npp_becomeapartner_handler");
 
-function npp_becomeapartner_handler() {
+function npp_becomeapartner_handler($atts) {
   //run function that actually does the work of the plugin
-  $my_output = npp_becomeapartner_function();
+  $my_output = npp_becomeapartner_function($atts);
   //send back text to replace shortcode in post
   return $my_output;
 }
 
-function npp_becomeapartner_function() {
+function npp_becomeapartner_function($atts) {
   //process plugin
+  extract( shortcode_atts( array(    
+        'custom_title' => 'Join us today',
+  ), $atts) );
+
   include('template.php');
   //send back text to calling function
   return $my_content;

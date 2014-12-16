@@ -11,8 +11,11 @@ $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 $my_children = get_page_children( get_queried_object_id(), $all_wp_pages );
 
 if ($my_children && sizeof($my_children)>0){
-  $my_content .= '<div class="secondary-content">
-                    <div class="col-container">';
+  $my_content .= '<div class="secondary-content">';
+  if ($custom_title!=''){
+           $my_content .= '<h2 class="module-header">'.$custom_title.'</h2>';
+  }   
+  $my_content .= '<div class="col-container">';
 
   foreach ($my_children as $child) {
      if ( has_post_thumbnail( $child->ID ) ) :

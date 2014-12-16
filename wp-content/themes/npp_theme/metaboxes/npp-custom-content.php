@@ -28,8 +28,14 @@
 
 		
 		<?php // need to html_entity_decode() the value b/c WP Alchemy's get_the_value() runs the data through htmlentities() ?>
+
+
 			
-		<div class="group-inside">		
+		<div class="group-inside">	
+			<?php $mb->the_field('custom_title'); ?>
+			<p>Content block title to display on page</p>
+			<input type="text" class="custom_title" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>"/><BR>
+
 			<p>Please select the display format you want in this block. Then enter content in the text areas below. Please note that for </p>
 			<?php $displays = array('1','2','3','4','5','6','7','8','9','10','11'); ?>
 			<table>
@@ -109,7 +115,7 @@
 				</div><!-- .wp-editor-tools -->
 
 				<div class="wp-editor-container">
-					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'the_editor_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
+					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'meta_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
 				</div>
 				<p><span><?php _e('Enter in some text');?></span></p>
 
@@ -128,7 +134,7 @@
 				</div><!-- .wp-editor-tools -->
 
 				<div class="wp-editor-container">
-					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'the_editor_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
+					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'meta_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
 				</div>
 				<p><span><?php _e('Enter in some text');?></span></p>
 
@@ -147,7 +153,7 @@
 				</div><!-- .wp-editor-tools -->
 
 				<div class="wp-editor-container">
-					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'the_editor_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
+					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'meta_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
 				</div>
 				<p><span><?php _e('Enter in some text');?></span></p>
 
@@ -166,7 +172,7 @@
 				</div><!-- .wp-editor-tools -->
 
 				<div class="wp-editor-container">
-					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'the_editor_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
+					<textarea class="wp-editor-area" rows="10" cols="50" name="<?php $mb->the_name(); ?>" rows="3"><?php echo esc_html( apply_filters( 'meta_content', html_entity_decode( $mb->get_the_value() ) ) ); ?></textarea>
 				</div>
 				<p><span><?php _e('Enter in some text');?></span></p>
 

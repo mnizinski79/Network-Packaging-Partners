@@ -1,7 +1,7 @@
    
 <div class="secondary-content">
                     <div class="col-container">
-                        <h2>Join us today</h2>
+                        <?php echo '<h2 class="module-header">'.$custom_title.'</h2>'; ?>
                         <p>
                             Tell us a little bit about you, and we'll get in touch about becoming a member of Network Packaging Partners. We look forward to working with you. 
                         </p>

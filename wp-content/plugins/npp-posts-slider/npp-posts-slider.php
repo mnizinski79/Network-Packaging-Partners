@@ -11,15 +11,19 @@ Author URI: http://www.amylashley.net
 //tell wordpress to register the demolistposts shortcode
 add_shortcode("npp-related-posts-slider", "npp_postsslider_handler");
 
-function npp_postsslider_handler() {
+function npp_postsslider_handler($atts) {
   //run function that actually does the work of the plugin
-  $slider_output = npp_postsslider_function();
+  $slider_output = npp_postsslider_function($atts);
   //send back text to replace shortcode in post
   return $slider_output;
 }
 
-function npp_postsslider_function() {
+function npp_postsslider_function($atts) {
   //process plugin
+  extract( shortcode_atts( array(    
+        'custom_title' => '',
+  ), $atts) );
+  
   include('carousel.php');
   //send back text to calling function
   return $my_content;

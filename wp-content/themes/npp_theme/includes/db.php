@@ -3,7 +3,7 @@
 
 function getPostsByTitle($position_name){
 	global $wpdb;
-	$querystr.= "select * FROM $wpdb->posts WHERE post_type = 'job_listing' and post_title = '".$position_name."'";
+	$querystr.= "select * FROM $wpdb->posts WHERE post_type = 'job_listing' and post_title <> '' and post_title = '".$position_name."'";
     $custom_query = true;
     return  $wpdb->get_results($querystr, OBJECT);   
 }
@@ -19,8 +19,8 @@ function getPostsByLocation($location){
                     ON $wpdb->posts.ID = $wpdb->postmeta.post_id
                     
         WHERE       $wpdb->postmeta.meta_key = '".$meta_key1."'
-                    AND $wpdb->postmeta.meta_value %LIKE& '".$meta_key1_value."'";
-                        
+                    AND $wpdb->posts.post_title <> ''
+                    AND $wpdb->postmeta.meta_value LIKE '".$meta_key1_value."'";
     return $wpdb->get_results($querystr, OBJECT);
 }
 
@@ -34,10 +34,10 @@ function getPostsByLocationAndTitle($location, $position_name){
         INNER JOIN  $wpdb->postmeta 
                     ON $wpdb->posts.ID = $wpdb->postmeta.post_id
                     
-        WHERE       $wpdb->postmeta.meta_key %like% '".$meta_key1."'
+        WHERE       $wpdb->postmeta.meta_key = '".$meta_key1."'
                     AND $wpdb->postmeta.meta_value = '".$meta_key1_value."'
-        AND         $wpdb->posts.post_title %like%'".$position_name."'";
-                        
+        AND         $wpdb->posts.post_title = '".$position_name."'";
+                 
     return $wpdb->get_results($querystr, OBJECT);
 	
 }
