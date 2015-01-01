@@ -13,14 +13,16 @@ function initParallax() {
     _targetContainer.append(_parallaxImg);
     
     function setParallaxSize(){
+        var _headerOffset = $("header").css("position") === "relative" ? $("header").outerHeight() : 0;
+        
         $(".parallax-image-container").css({
             "width" : _targetContainer.outerWidth(),
-            "height" : _targetContainer.outerHeight(),
+            "height" : _targetContainer.outerHeight() + _headerOffset,
             "backgroundImage" : _bgImg
         });
         
         $(".parallax-image-container").css("top",function(){
-            var _headerOffset = $("header").css("position") === "relative" ? $("header").outerHeight() : 0;
+            var _headerOffset = 0;//$("header").css("position") === "relative" ? $("header").outerHeight() : 0;
             var _offset = $(this).offset();
             var _top = _offset.top;
             var _style = _top + _headerOffset;
@@ -37,7 +39,7 @@ function initParallax() {
     var _speed = _globalSpeed!==null ? _globalSpeed : 0.5;
     
     function handleScroll(){   
-        var _headerOffset = $("header").css("position") === "relative" ? $("header").outerHeight() : 0;
+        var _headerOffset = 0;//$("header").css("position") === "relative" ? $("header").outerHeight() : 0;
         
         $(".parallax-image-container").css("top", function(){            
             var _newPos = (-($(window).scrollTop())*_speed) + _headerOffset;
@@ -88,7 +90,7 @@ function initPosMessage() {
             _winHeight = $(window).height();
             //_ratio = 505/1300;
             _contentHeight = _this.height();
-            _imgHeight = 1.5*_contentHeight;
+            _imgHeight = 1.2*_contentHeight;
             _distance = _imgHeight - _contentHeight;
             _speed = _distance/_winHeight;
             _globalSpeed = _speed;
@@ -104,10 +106,18 @@ function initPosMessage() {
         
         function handleScroll(){        
             if(_paralax === true){
-                var _newPos = "center " + -(($(window).scrollTop()*_globalSpeed)) + "px";
-
+                //var _newPos = "center " + -(($(window).scrollTop()*_globalSpeed)) + "px";
+                var _newPosX = "50%";
+                var _newPosY = -(($(window).scrollTop()*_globalSpeed)) + "px";
+                
                 _this.css({
-                    "background-position": _newPos
+                    "background-position-x": _newPosX,
+                    "background-position-y": _newPosY
+                });
+            } else {
+                _this.css({
+                    "background-position-x": "40%",
+                    "background-position-y": "50%"
                 });
             }
         }
@@ -151,11 +161,22 @@ function initFooter() {
 
     function handleScroll(){        
         if(_paralax === true){
+            
+            var _newPosX = "50%";
+            var _newPosY = -(($(window).scrollTop()*_speed)) + "px";
+
+            $(".sub-footer").css({
+                "background-position-x": _newPosX,
+                "background-position-y": _newPosY
+            });
+            
+            /*
             var _newPos = "center " + -(($(window).scrollTop()*_speed)) + "px";
 
             $(".sub-footer").css({
                 "background-position": _newPos
             });
+            */
         }
     }
     

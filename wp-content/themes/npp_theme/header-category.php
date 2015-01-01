@@ -13,7 +13,17 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	
-
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://www.networkpkg.comapple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.networkpkg.comapple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.networkpkg.comapple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.networkpkg.comapple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://www.networkpkg.comapple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.networkpkg.comapple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="http://www.networkpkg.comfavicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="http://www.networkpkg.comfavicon-16x16.png" sizes="16x16" />
+    <meta name="application-name" content="Network Packaging Partners"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="http://www.networkpkg.commstile-144x144.png" />
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">

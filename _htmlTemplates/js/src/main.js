@@ -106,14 +106,18 @@ function initPosMessage() {
         
         function handleScroll(){        
             if(_paralax === true){
-                var _newPos = "center " + -(($(window).scrollTop()*_globalSpeed)) + "px";
-
+                //var _newPos = "center " + -(($(window).scrollTop()*_globalSpeed)) + "px";
+                var _newPosX = "50%";
+                var _newPosY = -(($(window).scrollTop()*_globalSpeed)) + "px";
+                
                 _this.css({
-                    "background-position": _newPos
+                    "background-position-x": _newPosX,
+                    "background-position-y": _newPosY
                 });
             } else {
                 _this.css({
-                    "background-position": "40% center"
+                    "background-position-x": "40%",
+                    "background-position-y": "50%"
                 });
             }
         }
@@ -157,11 +161,22 @@ function initFooter() {
 
     function handleScroll(){        
         if(_paralax === true){
+            
+            var _newPosX = "50%";
+            var _newPosY = -(($(window).scrollTop()*_speed)) + "px";
+
+            $(".sub-footer").css({
+                "background-position-x": _newPosX,
+                "background-position-y": _newPosY
+            });
+            
+            /*
             var _newPos = "center " + -(($(window).scrollTop()*_speed)) + "px";
 
             $(".sub-footer").css({
                 "background-position": _newPos
             });
+            */
         }
     }
     

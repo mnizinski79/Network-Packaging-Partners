@@ -162,6 +162,9 @@ function npp_load_javascript_files() {
         //<script src="js/plugins.js"></script>
  
   wp_register_script( 'npp-plugins', get_template_directory_uri() . '/js/plugins.js', array('jquery'));
+    
+  wp_register_script( 'npp-respond', get_template_directory_uri() . '/js/respond.min.js', array('jquery'));
+    
   wp_register_script( 'npp-datepicker', get_template_directory_uri() . '/js/datepicker.js', array('jquery'));
   wp_register_script( 'npp-easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array('jquery'));
   wp_register_script( 'npp-hammer', get_template_directory_uri() . '/js/jquery.hammer.js', array('jquery'));
@@ -170,6 +173,7 @@ function npp_load_javascript_files() {
   wp_register_script( 'npp-main', get_template_directory_uri() . '/js/src/main.js', array('jquery'));
     
   wp_enqueue_script('npp-plugins');
+  wp_enqueue_script('npp-respond');
   wp_enqueue_script('npp-datepicker');
   wp_enqueue_script('npp-easing');
   wp_enqueue_script('npp-hammer');
@@ -256,7 +260,11 @@ function populate_jobs($form){
         $choices = array(array('text' => 'Job Interested In', 'value' => ' '));
         
         foreach($posts as $post){
-            $choices[] = array('text' => $post->post_title, 'value' => $post->post_title);
+            $position_company = $post->_company_name;
+            
+            if($position_company != ""){
+                $choices[] = array('text' => $post->post_title, 'value' => $post->post_title);
+            }
         }
         
         $field['choices'] = $choices;

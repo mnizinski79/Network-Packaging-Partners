@@ -49,7 +49,7 @@
         }
     }
     
-    #find-positions {
+    #find-positions, #home-intro + .secondary-content {
         padding: @mobile-padding;
         margin: 0;
         background: #fff;
@@ -82,7 +82,7 @@
                         background: none;
                         color: @primary-color;
                         border: 0;
-                        padding: 11px 15px 9px;
+                        padding: 7px 15px 9px;
                         font-size: 1.4em;
                         top: 0px;
                         right: 0px;
@@ -125,7 +125,7 @@
             .primary-font-light;
             font-size: 1.5em;
             margin: 0;
-            padding: 0;
+            padding: 5px 0 0 0;
             text-align: left;
         }
         
@@ -134,7 +134,11 @@
             margin: 20px 0 0;
             width: 105%;
             
-            ul {
+            .col-6 {
+                width: 50%;    
+            }
+            
+            ul, ol {
                 margin: 20px 0 0 0;
                 padding: 0;
                 list-style: none;
@@ -151,21 +155,7 @@
                         .transition(0.3s);
                         
                         &:before {
-                            .icon-font;
-                            content: "\e600";
-                            color: #fff;
-                            background: @secondary-color;
-                            .rounded(50%);
-                            display: inline-block;
-                            width: 16px;
-                            height: 16px;
-                            padding: 4px 4px;
-                            text-align: center;
-                            font-size: .5em;
-                            line-height: 1em;
-                            margin: 0 8px 0 0px;
-                            .transform(translateY(-1px));
-                            .transition(0.3s);
+                            .arrow-accent;
                         }
                         
                         &:hover {
@@ -182,49 +172,7 @@
     }
     
     #positioning-message {
-        .box-shadow(inset 0px 8px 8px -5px rgba(50, 50, 50, 0.25));
-        margin: 0;
-        padding: @mobile-padding*2 @mobile-padding;
-        background-size: cover;
-        background-position: center center;
-        text-align: center;
-        position: relative;
         
-        h2 {
-            padding: 0px 0 20px;
-            margin: 0;
-            color: #fff;
-            .primary-font-regular;
-            text-shadow: 1.5px 2.598px 1px rgba(0, 0, 0, 0.08);
-            font-size: 2.5em;
-            line-height: 1.0em;
-            position: relative;
-            z-index: 2;
-        }
-        
-        p {
-            color: #fff;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
-            text-shadow: 1.5px 2.598px 1px rgba(0, 0, 0, 0.08);
-        }
-        
-        a {
-            position: relative;
-            z-index: 2;   
-        }
-        
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.1);
-            .transition(0.3s);
-        }
     }
     
     #content-feeds {
@@ -272,9 +220,24 @@
                     a {
                         display: block;
                         margin: 0 0 30px 0;
-                        padding: 0;
+                        padding: 0 30px 0 0;
                         position: relative;
-
+                        
+                        h2 {
+                            display: inline;
+                            color: fade(@primary-grey,90%);
+                            margin: 0;
+                            padding: 0;
+                            font-size: .85em;
+                            float: left;
+                            display: none;
+                            
+                            &:after {
+                                content: ".\00a0";
+                                display: inline-block;
+                            }
+                        }
+                        
                         h3 {
                             border: 0;
                             margin: 0;
@@ -298,7 +261,7 @@
                         p {
                             color: fade(@primary-grey,90%);
                             margin: 0;
-                            padding: 0 40px 0 0;
+                            padding: 0 40px 0 0; 
                         }
 
                         &:after {
@@ -405,7 +368,7 @@
                         
                         .img-thumb {
                             width: 45%;
-                            padding: 0 10% 10% 0;
+                            padding: 0 10% 5% 0;
                             float: left;
                             
                             img {   
@@ -419,6 +382,10 @@
                             float: left;
                             overflow: hidden;
                             width: 55%;
+                            
+                            h2 {
+                                display: none;   
+                            }
                             
                             h3 {
                                 border: 0;
@@ -495,15 +462,19 @@
         }
     }
     
-    #find-positions {
+    #find-positions, #home-intro + .secondary-content {
         .col-container {
             width: 105%;    
         }
         
+        .col-6 {
+            padding-bottom: 0;    
+        }
+        
         form {
-            width: 45%;
+            width: 100%;
             float: left;
-            padding: 0 5% 0 0;
+            padding: 0 10% 0 0;
             
             background: url(../img/fade-divider.png) 100% 50% no-repeat;
             background-size: contain;
@@ -520,12 +491,19 @@
                 text-align: left; 
                 line-height: 1.5em;
                 padding-top: 10px;
+                padding-bottom: 0;
             }
         }
         
         h3 {
             line-height: 1.5em;
-            padding-top: 15px;
+            padding-top: 28px;
+            border-bottom: none;
+            text-transform: none;
+        }
+        
+        ol {
+            margin-top: 15px;   
         }
         
         .link-box {
@@ -541,41 +519,7 @@
     }
     
     #positioning-message {
-        text-align: left;
         
-        .abs-content {
-            margin-left: 50%;    
-        }
-        
-        h2 {
-            padding: 0px 0 20px;
-            margin: 0;
-            color: @primary-grey;
-            text-shadow: inherit;
-            font-size: 2.5em;
-            line-height: 1.0em;
-            position: relative;
-            z-index: 2;
-            text-align: left;
-        }
-        
-        p {
-            color: fade(@primary-grey,80%);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            line-height: 1.5em;
-            text-shadow: inherit;
-        }
-        
-        a {
-            font-size: .85em; 
-            padding: 8px 12px 10px;
-        }
-        
-        &:after {
-            background: rgba(0,0,0,0);
-        }
     }
     
     #content-feeds {
@@ -603,7 +547,7 @@
                     a {
                         .img-thumb {
                             width: 100%;
-                            padding: 0 0% 10% 0;
+                            padding: 0 0% 5% 0;
                             float: none;
                         }
                         
@@ -643,20 +587,15 @@
     }
     
     #positioning-message {
-        padding: @mobile-padding*4 @base-margin;
         
-        p {
-            line-height: 1.5em;
-            font-size: 1.15em     
-        }
     }
     
-    #find-positions { 
+    #find-positions, #home-intro + .secondary-content { 
         padding: @mobile-padding/2 @base-margin;
         
         h3 {
             line-height: 1.65em;
-            padding-top: 15px;
+            padding-top: 28px;
         }
     }
     
@@ -664,7 +603,7 @@
         padding: @mobile-padding*2 @base-margin;
         
         .col-container {
-            .col-3 {
+            .col-4 {
                 padding-bottom: 0;    
             } 
         }
@@ -713,7 +652,7 @@
                         
                         .img-thumb {
                             width: 45%;
-                            padding: 0 10% 10% 0;
+                            padding: 0 10% 5% 0;
                             float: left;
                         }
                         
@@ -732,7 +671,7 @@
                                 color: fade(@primary-grey,90%);
                                 margin: 0;
                                 padding: 0;
-                                font-size: .75em;
+                                font-size: .85em;
                                 line-height: 1.5em;
                             }
                         }
@@ -753,11 +692,11 @@
         }
     }
     
-    #positioning-message {
-        padding: @mobile-padding*4 @base-margin*1.5;
+    #positioning-message { 
+        
     }
     
-    #find-positions { 
+    #find-positions, #home-intro + .secondary-content { 
         padding: @mobile-padding @base-margin*1.5;
     }
     

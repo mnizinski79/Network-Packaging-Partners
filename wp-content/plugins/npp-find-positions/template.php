@@ -18,14 +18,17 @@
                                 <fieldset>
                                     <label for="input-search-positions">Jobs interested in</label>
                                     <select name="position-name" id="select-jobs-interested">
-                                        <option selected value="null">Jobs interested in...</option>
+                                        <option selected value="null">Job interested in...</option>
                                         <?php $recent_posts = wp_get_recent_posts(array(                                                                                                           
                                                         'orderby' => 'post_title',
                                                         'order' => 'ASC',                                                        
                                                         'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
-                                            foreach( $recent_posts as $recent ){  
-                                                echo '<option value="'.$recent["post_title"].'">'.$recent["post_title"].'</option>';                                                
+                                            foreach( $recent_posts as $recent ){ 
+                                                $position_company = get_the_company_name($recent["ID"]);
+                                                if($position_company != ""){
+                                                    echo '<option value="'.$recent["post_title"].'">'.$recent["post_title"].'</option>';
+                                                }
                                             }
                                         ?>                                         
                                     </select>

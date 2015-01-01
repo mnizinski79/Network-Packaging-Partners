@@ -19,36 +19,81 @@
             }
         }
         
+        &.search-open {  
+            padding-top: 130px;
+            
+            #primary-search {
+                opacity: 1;
+                z-index: auto;
+            }
+            
+            .parallax-image-container {
+                margin-top: 130px;
+            }
+        }
+        
+        .btn-row {
+            clear: both;   
+        }
+        
+        p.smaller {
+            font-size: .9em;
+            margin-top: 10px!important;
+            color: fade(@primary-grey,60%);
+        }
+        
         //nav high lights
-        &.section-why-us {
+        header nav#nav-container {
             
-            header nav#nav-container {
-            
-                ul {
-                    &#primary-nav {
+            ul {
+                &#primary-nav {
 
-                        li#lnk-why-us {
-                            position: relative;
-                            a {
-                                background: @secondary-color;
-                                color: #fff;
-                            }
-                            
-                            &:after {
-                                content: "";
-                                border-style: solid;
-                                border-width: 10px 48px 0 48px;
-                                border-color: #fc5001 transparent transparent transparent;
-                                position: absolute;
-                                bottom: -10px;
-                                left: 0;
-                                right: 0px;
-                            }
+                    li.current_page_item {
+                        position: relative;
+                        a {
+                            background: @secondary-color;
+                            color: #fff;
+                        }
+
+                        &:after {
+                            /*content: "";
+                            border-style: solid;
+                            border-width: 10px 48px 0 48px;
+                            border-color: #fc5001 transparent transparent transparent;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                            right: 0px;*/
+                        }
+                    }
+                }
+                
+                &#secondary-nav {
+
+                    li.current_page_item {
+                        position: relative;
+                        a {
+                            background: @secondary-color;
+                            color: #fff;
                         }
                     }
                 }
             }
         }
+    }
+    
+    .breadcrumbs { display: none; }
+    
+    .parallax-image-container {
+        position: fixed;
+        left: 0;
+        top: 0;
+        .transform(translateY(0));
+        background-position: center center;
+        z-index: -1; 
+        background-size: cover;
+        margin-top: 0;
+        .transition-property(margin-top, 0.2s, cubic-bezier(0.19, 1, 0.22, 1));
     }
     
     a {
@@ -99,6 +144,20 @@
                 line-height: 0;
             }
         }
+        
+        &.accent-search {
+            color: #fff;
+            
+            &:before {
+                .icon-font;
+                content: "\e602";
+                font-size: 1.25em;
+                display: inline-block;
+                margin: 0 10px 0 0;
+                vertical-align: middle;
+                line-height: 0;
+            }
+        }
     }
     
     h2 {
@@ -111,7 +170,16 @@
         text-align: center;
     }
     
-    input {
+    h3 {
+        .primary-font-regular;
+        font-size: 1.75em;
+        color: @primary-grey;
+        line-height: 1.5em;
+        margin: 0 0 0.25em 0;
+        padding: 0;
+    }
+    
+    input, textarea, select {
         .rounded(10px);
         border: 1px solid #d6d6d6;
         padding: 10px 15px;
@@ -120,6 +188,7 @@
         font-size: 1.0em;
         width: 100%;        
         .transition(0.3s);
+        background-color: #fff;
         
         &:focus {
             outline: none;
@@ -128,78 +197,352 @@
         }
     }
     
-    //columns
-    .col-container {
-        overflow: hidden;
-        width: 105%;
+    select {
+        -webkit-appearance: none;
+        background-image: url(../img/svgs/ddl-arrow.svg);
+        background-position: 92% 50%;
+        background-repeat: no-repeat;
+        background-size: 8%;
     }
     
-    .col-2 {
-        width: 50%;
+    .secondary-content {
+        
+        input[type="submit"] {
+            .rounded(10px);
+            padding: 13px 15px 15px;
+            display: inline-block;
+            .transition(.2s);
+            border: 0;
+            width: auto;
+            padding: 5px 15px 7px; 
+            font-size: .9em;
+
+            background-color: @primary-color;
+            color: #fff;
+
+            &:hover {
+                background-color: darken(@primary-color,10%);   
+            }
+        }
+        
+        .chosen-container {
+            width: 100%!important; 
+
+            .chosen-drop {
+                border: 1px solid #d6d6d6;
+                background: #fff;
+                border-top: 0;
+            }
+
+            .chosen-results {
+                max-height: 80px;    
+            }
+        }
+
+        .chosen-container-single {
+            .chosen-drop { 
+                .rounded(10px);
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            .chosen-single {
+                font-size: 1.1em;
+                height: auto;
+                padding: 5px 10px;
+                .rounded(10px);
+                background: #fff;
+                border: 1px solid #d6d6d6;
+                .box-shadow(initial);
+
+                span {
+                    opacity: .7;   
+                }
+
+                div {
+                    width: 18px;
+
+                    b {
+                        background: url(../img/svgs/ddl-arrow.svg) 0 50% !important;
+                        background-repeat: no-repeat!important;
+                        background-size: 70% 70%!important;
+                    }
+                }
+            }
+
+        }
+
+        .chosen-container-active.chosen-with-drop {
+            .chosen-single {
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                
+                border: 1px solid #d6d6d6;
+                background: #fff;
+            }
+
+        }
+        
+    }
+    
+    input[type="checkbox"] {
+        width: auto;    
+    }
+    
+    button {
+        border: none;
+        .primary-font-regular;
+        
+        &:focus {
+            outline: none;
+            .box-shadow(0px 0px 5px rgba(0,0,0,0));
+        }
+    }
+    
+    textarea {
+        height: 122px;    
+    }
+    
+    //columns
+    .col-container {
+        overflow: visible;
+        width: 100%;
+    }
+    
+    .col-12 {
+        width: 100%;
         float: left;
-        padding: 0 5% 5% 0;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-11 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-10 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-9 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-8 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-7 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-6 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-5 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-4 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
     }
     
     .col-3 {
         width: 100%;
-        padding: 0 0 5% 0;
+        float: left;
+        padding: 0 5% 0% 0;
     }
+    
+    .col-2 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    .col-1 {
+        width: 100%;
+        float: left;
+        padding: 0 5% 0% 0;
+    }
+    
+    //wp extras
+    .size-full {
+        width: 100%;
+        height: auto;
+    }
+    
+    
 }
 
 @media @medium {
     //body {background: green;}
     
+    h2 {
+        padding: 0 0 20px;       
+    }
+    
     //columns
+        //columns
     .col-container {
-        overflow: hidden;
-        width: 105%;
+        overflow: visible;
+        width: 100% + @column-space;
     }
     
-    .col-2 {
-        width: 50%;
+    .col-12 {
+        width: percentage(12/@column-number);
         float: left;
-        padding: 0 5% 5% 0;
+        padding: 0 @column-space @column-space 0;
     }
     
-    .col-3 {
-        width: 50%;
-        padding: 0 5% 5% 0;
+    .col-11 {
+        width: percentage(11/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-10 {
+        width: percentage(10/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-9 {
+        width: percentage(9/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-8 {
+        width: percentage(8/@column-number);
+        padding: 0 @column-space @column-space 0;
+        float: left;
+    }
+    
+    .col-7 {
+        width: percentage(7/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-6 {
+        width: percentage(6/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-5 {
+        width: percentage(5/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-4 {
+        width: percentage(6/@column-number);
+        padding: 0 @column-space @column-space 0;
         float: left;
         
         &:last-of-type {
             width: 100%;
-            padding: 0 5% 0% 0;
+            padding: 0 @column-space @column-space 0;
         }
+    }
+    
+    .col-3 {
+        width: percentage(6/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+        
+        &.sidebar {
+            width: 25%;    
+        }
+    }
+    
+    .col-2 {
+        width: percentage(2/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-1 {
+        width: percentage(1/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-3 + .col-8 {
+        float: right; //for side bars that are first followed by a col that spans the rest of space    
+    }
+    
+    .col-8 + .col-3 {
+        float: right; //for side bars that follow a col that spans the rest of space    
     }
 }
 
 @media @large {
     //body {background: orange;}
     
-    //columns
-    .col-container {
-        overflow: hidden;
-        width: 105%;
-    }
     
-    .col-2 {
-        width: 50%;
+    
+    //columns
+    
+    .col-6 {
+        width: percentage(6/@column-number);
         float: left;
-        padding: 0 5% 5% 0;
+        padding: 0 @column-space @column-space 0;
     }
     
     .col-3 {
-        width: 33.3333%;
-        padding: 0 5% 5% 0;
+        width: percentage(3/@column-number);
         float: left;
+        padding: 0 @column-space @column-space 0;
+    }
+    
+    .col-4 {
+        width: percentage(4/@column-number);
+        float: left;
+        padding: 0 @column-space @column-space 0;
         
         &:last-of-type {
-            width: 33.3333%;
-            padding: 0 5% 5% 0;
+            width: percentage(4/@column-number);
+            padding: 0 @column-space @column-space 0;
         }
     }
 }
 
 @media @extra-large {
     //body {background: red;}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+
+    .secondary-content {
+        .chosen-container-single {
+            .chosen-single {
+                div {
+                    b {
+                        background: url(../img/svgs/ddl-arrow.svg) 0 50% !important;
+                        background-repeat: no-repeat!important;
+                        background-size: 70% 70%!important;
+                    }
+                }
+            }
+
+        }
+    }
 }
