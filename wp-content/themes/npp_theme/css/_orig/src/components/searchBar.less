@@ -1,0 +1,65 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+#primary-search {
+    @media @small {
+        padding: @mobile-padding @mobile-padding @mobile-padding*2;
+        margin: 0;
+        background-color: @light-grey;
+        .transition(0.2s, cubic-bezier(0.19, 1, 0.22, 1));
+        overflow: hidden;
+        z-index: -1;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        
+        fieldset {
+            margin-left: 35px;
+            
+            &:before {
+                font-size: 2em;
+                .transform(translateY(25px));
+                color: @secondary-grey;
+                text-align: center;
+                position: absolute;
+                left: @mobile-padding;
+            }
+        }
+        
+        label {
+            display: none;  
+        }
+        
+        input {
+            .rounded(0);
+            border-width: 0;
+            border-bottom-width: 2px;
+            font-size: 2.0em;
+            width: 100%;
+            background: none;
+            
+            &:focus {
+                background: none;
+                box-shadow: none;
+                box-shadow: initial;
+            }
+        }
+        
+    }
+
+    @media @medium {
+
+    }
+
+    @media @large {
+        //padding: @mobile-padding @base-margin @mobile-padding*2;
+        background-color: #fff;
+    }
+
+    @media @extra-large {
+        //padding: @mobile-padding @base-margin*1.5 @mobile-padding*2;
+    }
+}

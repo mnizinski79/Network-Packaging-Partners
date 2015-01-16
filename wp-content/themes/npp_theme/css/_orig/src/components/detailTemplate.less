@@ -1,0 +1,108 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+@media @small {
+    .default-container {
+        margin: 0;
+        padding: @mobile-padding;
+        background: #fff;
+        
+        h2 {
+            text-align: left;
+        }
+    }
+    
+    .detail-img {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            border: 3px solid rgba(0,0,0,0.05);
+        }
+    }
+    
+    ul.tag-list {
+        display: none;    
+    }
+    
+    h2.hdr-detail {
+        padding: 10px 0 20px 0;
+        border-bottom: 1px solid fade(@primary-grey,30%);    
+    }
+}
+
+@media @medium {
+    .detail-img {
+        float: right;
+        margin: 0;
+        padding: 0 0 5% 5%;
+        width: 50%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            border: 3px solid rgba(0,0,0,0.05);
+        }
+    }
+    
+    ul.tag-list {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: .75em;
+        
+        li {
+            display: inline-block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            &:after {
+                content: ", ";
+                display: inline-block;
+                color: fade(@primary-grey,70%);
+            }
+            
+            &:last-of-type {
+                &:after {
+                    content: "";
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    
+    h2.hdr-detail {
+        overflow: hidden;
+        text-align: left;
+        font-size: 2.0em;
+    }
+}
+
+@media @large {
+    .default-container { 
+        padding: @mobile-padding*2 @base-margin;    
+    }
+    
+    h2.hdr-detail {
+        font-size: 2.5em;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+}
+
+@media @extra-large {
+    .default-container { 
+        padding: @mobile-padding*2 @base-margin*1.5;
+    }
+}

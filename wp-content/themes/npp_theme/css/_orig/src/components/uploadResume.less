@@ -1,0 +1,134 @@
+@import "../vars.less";
+@import "../mixins.less";
+
+@media @small {
+    .upload-container {
+        margin: 30px 0;   
+    }
+    
+    .uploader-graphic {
+        width: 25%;
+        padding: 0 5% 5% 0;
+        border: 0px solid red;
+        float: left;
+        text-align: center;
+        
+        .fig-content {
+            width: 100%;
+            text-align: center;
+            border: 1px solid #d6d6d6;
+            background: fade(@primary-grey, 5%);
+            padding: 20px 30px;
+        }
+        
+        figcaption {
+            .primary-font-regular;
+            font-size: .7em;
+            margin: 0px 0 0 0;
+            font-style: italic;
+            color: fade(@primary-color,65%);
+        }
+        
+        .loader-sprite {
+            width: 20%;
+            padding-top: 25%;
+            margin: -10px auto 0;
+            background: url(../img/svgs/loader-sprite.svg) 0 0 no-repeat;
+            background-size: 400%;
+        
+            &.load-50 { background-position: 33% 0; }
+            &.load-75 { background-position: 66% 0; }
+            &.load-100 { background-position: 100% 0; }
+        }
+    }
+    
+    #form-resume-upload {
+        float: left;
+        width: 75%;
+        position: relative;
+    }
+    
+    .file-upload-hide {
+        z-index:-1;
+        position:absolute;
+        visibility: hidden;
+    }
+    
+    .form-control {
+        .rounded(10px);
+        border: 1px solid #d6d6d6;
+        padding: 15px 15px;
+        color: fade(@primary-grey,75%);
+        .primary-font-regular;
+        font-size: 1.0em;
+        width: 100%;  
+        display: block;
+        .transition(0.3s);
+        background-color: #fff;
+        cursor: pointer;
+        
+        &:focus {
+            outline: none;
+            .box-shadow(0px 0px 5px rgba(0,0,0,0.15));
+            background-color: fade(@secondary-grey,10%);
+        }    
+    }
+    
+    .form-upload-cap {
+        border: 0 solid #f00;
+        width: 95px;
+        position: absolute;
+        top: -1px;
+        right: 0;
+        height: 55px;
+        background: #fff url(../img/svgs/form-upload-cap.svg) 0 0 no-repeat;
+        background-size: 100%;
+    }
+    
+    .divider {
+        border-top: 1px solid @light-grey;
+        text-align: center;
+        margin: 30px 0 10px;
+        color: @primary-grey;
+        
+        span {
+            display: inline-block;
+            background: #fff;
+            padding: 0 10px;
+            .transform(translateY(-13px));
+        }
+    }
+    
+    .api-call {
+        border: 1px solid @primary-color;  
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+        
+        &:hover {
+            background: fade(@primary-color,10%);
+        }
+    }
+    
+    #logo-linkedIn {
+        background: url(../img/logo-linkedin.png) 50% 50% no-repeat;
+        background-size: contain;
+        display: inline-block;
+        width: 80px;
+        height: 18px;
+        .hide-text;
+        .transform(translateY(3px));
+    }
+}
+
+@media @medium {
+    
+}
+
+@media @large {
+    
+}
+
+@media @extra-large {
+    
+}

@@ -78,7 +78,12 @@ $args = array(
                             <div class="list-content">
                                 <h3><?php the_title(); ?></h3>
                                 <p>
-                                    <?php echo substr($post->post_content, 0, 200); ?>...
+                                    <?php 
+                                        //echo substr($post->post_content, 0, 200)."..."; 
+                                        //echo substr($post->post_content, 0, 900); 
+                                        echo substr( $post->post_content, 0, strpos( $post->post_content, '</p>' ) + 4 );
+                                        //echo the_content("",true);
+                                    ?>
                                 </p>
                             </div>
                         </a>

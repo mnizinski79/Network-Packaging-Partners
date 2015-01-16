@@ -5,6 +5,7 @@
                         <p>
                             Tell us a little bit about you, and we'll get in touch about becoming a member of Network Packaging Partners. We look forward to working with you. 
                         </p>
+                        <div id="note" style="display:none;">Thank you for contacting us. We will be in touch soon!</div>
                         <form id="npp-become-a-partner" method="post">
                             <input type="hidden" name="p" value="<?php echo (plugin_dir_url( __FILE__ )); ?>">
                             <input type="hidden" name="e" value="<?php echo get_bloginfo('admin_email'); ?>">
@@ -67,10 +68,6 @@
                             <fieldset class="btn-row">
                                 <button type="submit" value="Search" id="btn-search" class="btn primary " name="btn-search"><span>Submit</span></button>
                             </fieldset>
-                            
                         </form>
-                        <div id="note" style="display:none;">Thank you for contacting us. We will be in touch soon!</div>
-                        <div id="error" style="display:none;">Oh no! Something went wrong. Please try again later.</div>
-                        
                     </div>
                 </div>

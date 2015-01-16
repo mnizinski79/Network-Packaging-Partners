@@ -45,7 +45,10 @@ get_header();
                                                         'post_type' => 'job_listing',
                                                         'post_status' => 'publish'));
                                     foreach( $recent_posts as $recent ){  
-                                        if ($recent["post_title"]==''){continue;}
+                                        //if ($recent["post_title"]==''){continue;}
+                                        
+                                        if (get_the_company_name($recent["ID"])==''){continue;}
+                                        
                                         $position_city = get_post_meta($recent["ID"], '_job_location', true );
                                         $position_zipcode = get_post_meta($recent["ID"], 'position_zipcode', true );
                                         echo '<li>';
@@ -64,8 +67,10 @@ get_header();
                                                 echo '</h4>';
                                             }
                                         }
-                                         echo '<h3>'.$recent["post_title"].'</h3>';
-                                        echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                        echo '<h3>'.$recent["post_title"].'</h3>';
+                                        //echo '<p>'.substr($recent["post_content"], 0,900).'</p>'; //changed from 50 characters
+                                        echo '<p>'.substr( $recent["post_content"], 0, strpos( $recent["post_content"], '</p>' ) + 4 ).'</p>'; //changed from 50 characters
+                                        //echo the_content("",true);
                                         echo '</a>';
                                         echo '</li>';
                                     }

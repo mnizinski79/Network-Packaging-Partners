@@ -1907,6 +1907,16 @@ html.backgroundsize #page-header {
   }
 }
 @media screen and (min-width: 0px) {
+  .gform_confirmation_wrapper .gform_confirmation_message {
+    border: 2px solid #DBDBDB;
+    background: #ececec;
+    padding: 20px 15px;
+    margin: 30px 0;
+    color: #565656;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 0px) {
   html.backgroundsize #home-intro {
     background-size: cover;
   }
@@ -2152,6 +2162,7 @@ html.backgroundsize #page-header {
     padding: 40px 20px;
     overflow: hidden;
     width: 100%;
+    background-color: #fff;
   }
   #content-feeds .col-container {
     width: 100%;

@@ -2,22 +2,11 @@
 @import "../mixins.less";
 
 @media @small {
-    
-    //moderizer
-    html {
-        &.backgroundsize {
-            #home-intro {
-                background-size: cover;
-            }   
-        }
-    }
-    
     #home-intro {
         margin: 0;
         padding: @mobile-padding*2 @mobile-padding;
-        //background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+        background-size: cover;
+        background-position: center center;
         text-align: center;
         position: relative;
         
@@ -193,7 +182,6 @@
         padding: @mobile-padding*2 @mobile-padding;
         overflow: hidden;
         width: 100%;
-        background-color: #fff;
         
         .col-container {
             width: 100%;

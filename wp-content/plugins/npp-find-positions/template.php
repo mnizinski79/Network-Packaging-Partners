@@ -80,7 +80,10 @@
                                             echo '</h4>';
 
                                             echo '<h3>'.$recent["post_title"].'</h3>';
-                                            echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                            //echo '<p>'.substr($recent["post_content"], 0,50).' ...</p>';
+                                            //echo '<p>'.substr($recent["post_content"], 0,900).'</p>';
+                                            echo '<p>'.substr( $recent["post_content"], 0, strpos( $recent["post_content"], '</p>' ) + 4 ).'</p>';
+                                            //echo the_content("",true);
                                             echo '</a>';
                                             echo '</li>';
                                         }

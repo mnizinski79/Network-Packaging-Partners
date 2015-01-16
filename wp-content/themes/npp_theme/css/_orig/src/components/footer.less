@@ -2,23 +2,12 @@
 @import "../mixins.less";
 
 @media @small {
-    
-    //moderizer
-    html {
-        &.backgroundsize {
-            footer .sub-footer {
-                background-size: cover;
-            }   
-        }
-    }
-    
     footer {
         .sub-footer {
             padding: @mobile-padding*2 @mobile-padding;
-            //background-size: cover;
-            background-position: 50% 50%;
+            background-size: cover;
+            background-position: center center;
             background-attachment: fixed;
-            background-repeat: no-repeat;
             text-align: center;
             position: relative;
             
